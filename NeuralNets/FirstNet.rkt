@@ -1,7 +1,5 @@
 #lang racket
 
-; Link to eval function -> https://docs.racket-lang.org/guide/eval.html
-
 ;Task: hard-code a simple neual network to either add or subtract two numbers, a and b
 ; Three input neurons, a, b, and a neuron to indicate which operation is being performed
 ; One output neuron to represent the result
