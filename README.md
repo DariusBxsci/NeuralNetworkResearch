@@ -4,3 +4,4 @@ This repository is meant to store all code, diagrams, and notes regarding resear
 
 Research.pdf explains the math and logic behind each network
 The github wiki for page for this repo contains documentation for using code
+
