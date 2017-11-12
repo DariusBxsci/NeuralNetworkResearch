@@ -18,12 +18,9 @@ limitations under the License. |#
 (define ns (namespace-anchor->namespace a))  ;namespace necessary to use eval properly
 
 ;eval function is explained here: https://docs.racket-lang.org/guide/eval.html
-(define (evaluate operation val1 val2) ;evaluate the result of either addition or subtraction of two values
-    (define o operation)
-    (define x val1)
-    (define y val2)
-    (eval `(,operation ,x ,y) ns))
+(define (evaluate stack) ;evaluate the result of either addition or subtraction of two values
+    (eval (read (open-input-string (~a stack))) ns)) ; turn list into a string and evaluate
 
-(evaluate + 5 4) ; add two numbers
+(evaluate (list '+ 5 4)) ; add two numbers
 
-(evaluate - 5 4) ; subtract two numbers
+(evaluate (list '- 5 4)) ; subtract two numbers
