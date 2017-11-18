@@ -5,5 +5,7 @@ Addition/Subtraction Network:
 
 
 Input Permutation Network:
-	-Use a permutation matrix to reformat an expression such as 'a + b + c - d' into one which can be parsed by eval()
-	-The resulting expression should look like: '(- (+ (+ a b) c) d)'
+	-Use a permutation matrix to reformat an expression such as 'a + b + c - d' into one which can be parsed by eval() 
+	-Write an algorithm to generalize the matrix for any size of the expression
+	-The resulting expression should look something like: '- + + a b c d'
+	-
