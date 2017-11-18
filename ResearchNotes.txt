@@ -1,0 +1,9 @@
+-- The purpose of this document is to record notes/reflect about each portion of our research and about different ideas regarding the direction of the project --
+
+Addition/Subtraction Network:
+	-Input to a network may be represented as a list, then passed into the eval() function
+
+
+Input Permutation Network:
+	-Use a permutation matrix to reformat an expression such as 'a + b + c - d' into one which can be parsed by eval()
+	-The resulting expression should look like: '(- (+ (+ a b) c) d)'
