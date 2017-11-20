@@ -9,3 +9,11 @@ Input Permutation Network:
 	-Write an algorithm to generalize the matrix for any size of the expression
 	-The resulting expression should look something like: '- + + a b c d'
 	-
+
+Lollipop model:
+	-Several inputs and a single output
+	-The inputs are not ordered, but the inputs themselves will be tuples such as
+		[2, 1] [+, 0] [3, 2],
+		which have an operand or opertator in the first index, and the position of that element in the second
+	-Possible extension:
+		-implement some sort of simple algorithm to detirmine the correct position of inputs given some output examples
