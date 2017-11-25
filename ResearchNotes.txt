@@ -17,3 +17,4 @@ Lollipop model:
 		which have an operand or opertator in the first index, and the position of that element in the second
 	-Possible extension:
 		-implement some sort of simple algorithm to detirmine the correct position of inputs given some output examples
+			-RESEARCH QUESTION: ^^^ Is this possible? ^^^

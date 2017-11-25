@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  20 NOV 2017 21:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  25 NOV 2017 13:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -892,34 +892,50 @@ LaTeX Info: Redefining \nameref on input line 3.
 ABD: EveryShipout initializing macros
 Preview: Fontsize 12pt
 Preview: PDFoutput 1
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
 [1
 
 
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 15.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 15.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
 
 (./NeuralNetwork_3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 15.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 15.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
 Package rerunfilecheck Info: File `NeuralNetwork_3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20151 strings out of 493029
- 371376 string characters out of 6136234
- 496413 words of memory out of 5000000
- 23322 multiletter control sequences out of 15000+600000
- 4107 words of font info for 16 fonts, out of 8000000 for 9000
+ 20255 strings out of 493029
+ 373390 string characters out of 6136234
+ 506098 words of memory out of 5000000
+ 23425 multiletter control sequences out of 15000+600000
+ 4414 words of font info for 17 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,5n,56p,506b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on NeuralNetwork_3.pdf (1 page, 15897 bytes).
+ 64i,6n,60p,508b,743s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on NeuralNetwork_3.pdf (1 page, 32025 bytes).
 PDF statistics:
- 20 PDF objects out of 1000 (max. 8388607)
- 12 compressed objects within 1 object stream
+ 24 PDF objects out of 1000 (max. 8388607)
+ 15 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
