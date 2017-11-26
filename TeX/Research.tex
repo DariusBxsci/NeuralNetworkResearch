@@ -1,6 +1,9 @@
 \documentclass[12pt]{article}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{graphicx, subfiles, hyperref, minted}
+\usepackage{tikz, xcolor}
+\usepackage{auto-pst-pdf}
+\usepackage{amsmath}
 
 \begin{document}
 
@@ -18,5 +21,13 @@
 \newpage
 \section{Simple Addition/Subtraction Network}
 \subfile{NeuralNetwork_1.tex}
+
+\newpage
+\section{Addition/Subtraction Network with input permutations}
+\subfile{NeuralNetwork_2.tex}
+
+\newpage
+\section{'Lollipop' Model of a Neuron}
+\subfile{NeuralNetwork_3.tex}
 
 \end{document}

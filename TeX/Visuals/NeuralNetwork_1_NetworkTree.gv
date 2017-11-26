@@ -1,0 +1,18 @@
+## Basic syntax trees for NeuralNetwork_1
+
+digraph TreePlusMinus {
+
+    "eval()" -> "+"
+    "eval()" -> "-"
+
+    "+" -> x_0
+    "+" -> y_0
+    x_0[label="x"]
+    y_0[label="y"]
+
+
+    "-" -> x_1
+    "-" -> y_1
+    x_1[label="x"]
+    y_1[label="y"]
+}

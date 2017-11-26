@@ -1,12 +1,21 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  25 NOV 2017 14:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  18 NOV 2017 16:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**Research.tex
-(./Research.tex
+**NeuralNetwork_2.tex
+(./NeuralNetwork_2.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+(/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+Document Class: subfiles 2012/05/23 Federico Garcia
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks14
+\verbatim@line=\toks15
+\verbatim@in@stream=\read1
+)
+Preamble taken from file `./Research.tex'
+(./Research.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -28,7 +37,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks16
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
@@ -52,7 +61,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutheight=\dimen108
 \Gm@layouthoffset=\dimen109
 \Gm@layoutvoffset=\dimen110
-\Gm@dimlist=\toks15
+\Gm@dimlist=\toks17
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
@@ -84,13 +93,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.sty
 Package: subfiles 2012/05/23 Federico Garcia
-
-(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks16
-\verbatim@line=\toks17
-\verbatim@in@stream=\read1
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -132,15 +135,18 @@ Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
 Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
 Package: xcolor-patch 2011/01/30 xcolor patch
 Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+
+
+Package auxhook Warning: Cannot patch \document,
+(auxhook)                using \AtBeginDocument instead.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen113
@@ -245,11 +251,11 @@ Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
 )
-runsystem(uname -s > "Research.w18")...executed.
+runsystem(uname -s > "NeuralNetwork_2.w18")...executed.
 
 
-(./Research.w18)
-runsystem(rm -- "Research.w18")...executed.
+(./NeuralNetwork_2.w18)
+runsystem(rm -- "NeuralNetwork_2.w18")...executed.
 
 )
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -297,10 +303,10 @@ LaTeX Info: Redefining \\ on input line 3056.
 \@float@every@listing=\toks21
 \c@listing=\count120
 )
-runsystem(mkdir -p "_minted-Research")...executed.
+runsystem(mkdir -p "_minted-NeuralNetwork_2")...executed.
 
 
-(./_minted-Research/default.pygstyle)
+(./_minted-NeuralNetwork_2/default.pygstyle)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -601,33 +607,28 @@ runsystem(echo "auto-pst-pdf: Auxiliary LaTeX compilation")...executed.
 
 runsystem(echo "-------------------------------------------------")...executed.
 
-runsystem(rm -- "Research-pics.pdf")...executed.
+runsystem(rm -- "NeuralNetwork_2-autopp.log")...executed.
 
-runsystem(latex -no-shell-escape -jobname="Research-autopp" -interaction=batchm
-ode  "\let \APPmakepictures \empty \input  Research.tex")...executed.
+runsystem(latex -no-shell-escape -jobname="NeuralNetwork_2-autopp" -interaction
+=batchmode  "\let \APPmakepictures \empty \input  NeuralNetwork_2.tex")...execu
+ted.
 
-runsystem(dvips -Ppdf -o "Research-autopp.ps" "Research-autopp.dvi")...executed
-.
 
-runsystem(ps2pdf -dAutoRotatePages=/None "Research-autopp.ps" "Research-autopp.
-pdf")...executed.
 
-runsystem(pdfcrop  "Research-autopp.pdf" "Research-pics.pdf")...executed.
+Package auto-pst-pdf Warning: 
+    Creation of NeuralNetwork_2-autopp.dvi failed.
+This warning occured on input line 124.
 
-runsystem(rm -- "Research-autopp.log")...executed.
 
-runsystem(rm -- "Research-autopp.dvi")...executed.
-
-runsystem(rm -- "Research-autopp.ps")...executed.
-
-runsystem(rm -- "Research-autopp.pdf")...executed.
+Package auto-pst-pdf Warning: 
+    Could not create NeuralNetwork_2-pics.pdf. Auxiliary files not deleted.
+This warning occured on input line 124.
 
 runsystem(echo "-------------------------------------------------")...executed.
 
 runsystem(echo "auto-pst-pdf: End auxiliary LaTeX compilation")...executed.
 
 runsystem(echo "-------------------------------------------------")...executed.
-
 
 (/usr/share/texlive/texmf-dist/tex/latex/pst-pdf/pst-pdf.sty
 Package: pst-pdf 2008/10/09 v1.1v PS graphics for pdfLaTeX (RN,HjG)
@@ -797,27 +798,28 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 LaTeX Info: Redefining \[ on input line 2735.
 LaTeX Info: Redefining \] on input line 2736.
 )
-runsystem(which "pygmentize" && touch "Research.aex")...executed.
+runsystem(which "pygmentize" && touch "NeuralNetwork_2.aex")...executed.
 
-runsystem(rm "Research.aex")...executed.
+runsystem(rm "NeuralNetwork_2.aex")...executed.
 
- (./Research.aux)
-\openout1 = `Research.aux'.
+))
+(./NeuralNetwork_2.aux)
+\openout1 = `NeuralNetwork_2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -868,7 +870,7 @@ LaTeX Font Info:    ... okay on input line 8.
 \everyMPtoPDFconversion=\toks51
 )
 \AtBeginShipoutBox=\box51
-Package hyperref Info: Link coloring OFF on input line 8.
+Package hyperref Info: Link coloring OFF on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -877,53 +879,20 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count184
 )
-LaTeX Info: Redefining \ref on input line 8.
-LaTeX Info: Redefining \pageref on input line 8.
-LaTeX Info: Redefining \nameref on input line 8.
+LaTeX Info: Redefining \ref on input line 3.
+LaTeX Info: Redefining \pageref on input line 3.
+LaTeX Info: Redefining \nameref on input line 3.
 
-(./Research.out) (./Research.out)
+(./NeuralNetwork_2.out) (./NeuralNetwork_2.out)
 \@outlinefile=\write7
-\openout7 = `Research.out'.
+\openout7 = `NeuralNetwork_2.out'.
 
 
-(./_minted-Research/default-pyg-prefix.pygstyle)
+(./_minted-NeuralNetwork_2/default-pyg-prefix.pygstyle)
 ABD: EveryShipout initializing macros
 Preview: Fontsize 12pt
 Preview: PDFoutput 1
-[1
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-(./Preface.tex) [2] (./NeuralNetwork_1.tex
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-<Research-pics.pdf, id=47, page=1, 273.02pt x 182.6825pt>
-File: Research-pics.pdf Graphic file (type pdf)
-
-<use Research-pics.pdf, page 1>
-Package pdftex.def Info: Research-pics.pdf, page1 used on input line 40.
-(pdftex.def)             Requested size: 273.01933pt x 182.68204pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
-
- []
-
-<Research-pics.pdf, id=48, page=2, 273.02pt x 182.6825pt>
-File: Research-pics.pdf Graphic file (type pdf)
-
-<use Research-pics.pdf, page 2>
-Package pdftex.def Info: Research-pics.pdf, page2 used on input line 44.
-(pdftex.def)             Requested size: 273.01933pt x 182.68204pt.
-) [3 <./Research-pics.pdf> <./Research-pics.pdf>] (./NeuralNetwork_2.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
@@ -948,60 +917,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
  []
 
-[4]
+[1
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-) [5] (./NeuralNetwork_3.tex
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--43
-
- []
-
-) [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
- (./Research.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
-Package rerunfilecheck Info: File `Research.out' has not changed.
-(rerunfilecheck)             Checksum: 2DB98C3442A338A6EFBE91F5D17D06EB;262.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
+[2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
+ (./NeuralNetwork_2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
+Package rerunfilecheck Info: File `NeuralNetwork_2.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20216 strings out of 493029
- 372977 string characters out of 6136234
- 506760 words of memory out of 5000000
- 23350 multiletter control sequences out of 15000+600000
- 10750 words of font info for 39 fonts, out of 8000000 for 9000
+ 20173 strings out of 493029
+ 371591 string characters out of 6136234
+ 508413 words of memory out of 5000000
+ 23334 multiletter control sequences out of 15000+600000
+ 7219 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,7n,69p,939b,874s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
-fb>
-Output written on Research.pdf (6 pages, 143907 bytes).
+ 64i,7n,56p,591b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on NeuralNetwork_2.pdf (2 pages, 64934 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 44 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
