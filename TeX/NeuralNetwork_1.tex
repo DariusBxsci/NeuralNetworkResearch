@@ -1,11 +1,55 @@
 \documentclass[./Research.tex]{subfiles}
 
+\usepackage{tikz, xcolor}
+
 \begin{document}
 
-Possibly the simplest two computations to combine into a single network are addition and subtraction. This can be accomplished using a syntax tree-style structure where an eval function is given an operator and two inputs. For example, the eval function would evaluate "+ 5 4" to 9, or "- 5 4" to 1.
+ Consider the construction of a neural network to alternately add and subtract numbers. It is useful to represent all binary operations in list form, $\left(+\;a\;b\right)$. The neural network, then, becomes a representation of a stack. 
+
+
+\def\layersep{2.5cm}
+
+\vspace{2em}
+{\centering
+\begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node 
+distance=\layersep]
+
+    \tikzstyle{every pin edge}=[<-,shorten <=1pt]
+    \tikzstyle{neuron}=[circle,fill=black!25,minimum size=17pt,inner sep=0pt]
+    \tikzstyle{input neuron}=[neuron, fill=green!50];
+    \tikzstyle{output neuron}=[neuron, fill=red!50];
+    \tikzstyle{hidden neuron}=[neuron, fill=blue!50];
+    \tikzstyle{annot} = [text width=4em, text centered]
+
+ 
+    % Draw the hidden layer nodes
+    \foreach \name / \y / \symbol in {1/1/+,2/2/a,3/3/-}
+        \path[yshift=0.5cm]
+            node[hidden neuron] (H-\name) at (\layersep,-\y cm) {\symbol};
+
+    % Draw the output layer node
+    \node[output neuron,pin={[pin edge={->}]right:$\left(+\;a\;b\right)$}, right of=H-3] (O) {\textt{eval(}$\left(+\;a\;b\right)$\textt{)}};
+
+    % Connect every node in the hidden layer with the output layer
+    \foreach \source in {1,...,3}
+        \path (H-\source) edge (O);
+
+    % Annotate the layers
+    \node[annot,left of=H-1] {Input};
+\end{tikzpicture}
+}
+
 
 \includegraphics{Visuals/NeuralNetwork_1_SyntaxTree.pdf}
 
 This structure is very similar to how compilers/interpreters view and evaluate code in a program.
 
+{\color{red}
+   To improve this sentence don't use \emph{weasel words}. I don't know what \emph{very similar} means to you. Neither a compiler nor interpreter \emph{view} code. Neither are (yet) sentient beings. 
+   
+   The best piece of writing advice I can give is: 
+   \begin{quote}
+       Mean exactly what you write and write exactly what you mean. 
+   \end{quote}
+}
 \end{document}
