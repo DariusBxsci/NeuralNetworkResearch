@@ -25,7 +25,7 @@ distance=\layersep]
             node[hidden neuron] (H-\name) at (\layersep,-\y cm) {\symbol};
 
     % Draw the output layer node
-    \node[output neuron,pin={[pin edge={->}]right:$\left(+\;a\;b\right)$}, right of=H-3] (O) {\textt{eval(}$\left(+\;a\;b\right)$\textt{)}};
+    \node[output neuron,pin={[pin edge={->}]right:$\left(+\;a\;b\right)$}, right of=H-3] (O) {\texttt{eval(}$\left(+\;a\;b\right)$\texttt{)}};
 
     % Connect every node in the hidden layer with the output layer
     \foreach \source in {1,...,3}

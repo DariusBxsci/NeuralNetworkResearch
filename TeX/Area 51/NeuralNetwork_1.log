@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  26 NOV 2017 11:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  12 NOV 2017 14:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -747,64 +747,6 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 \@envbody=\toks44
 )))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/03 v2.15a AMS math features
-\@mathmargin=\skip47
-
-For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks45
-\ex@=\dimen260
-))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen261
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
-)
-\inf@bad=\count166
-LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count167
-\leftroot@=\count168
-LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count169
-\DOTSCASE@=\count170
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
-\Mathstrutbox@=\box48
-\strutbox@=\box49
-\big@size=\dimen262
-LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
-\macc@depth=\count171
-\c@MaxMatrixCols=\count172
-\dotsspace@=\muskip11
-\c@parentequation=\count173
-\dspbrk@lvl=\count174
-\tag@help=\toks46
-\row@=\count175
-\column@=\count176
-\maxfields@=\count177
-\andhelp@=\toks47
-\eqnshift@=\dimen263
-\alignsep@=\dimen264
-\tagshift@=\dimen265
-\tagwidth@=\dimen266
-\totwidth@=\dimen267
-\lineht@=\dimen268
-\@envbody=\toks48
-\multlinegap=\skip48
-\multlinetaggap=\skip49
-\mathdisplay@stack=\toks49
-LaTeX Info: Redefining \[ on input line 2735.
-LaTeX Info: Redefining \] on input line 2736.
-)
 runsystem(which "pygmentize" && touch "NeuralNetwork_1.aex")...executed.
 
 runsystem(rm "NeuralNetwork_1.aex")...executed.
@@ -864,19 +806,19 @@ LaTeX Font Info:    ... okay on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count178
-\scratchdimen=\dimen269
-\scratchbox=\box50
-\nofMPsegments=\count179
-\nofMParguments=\count180
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count181
-\MPscratchDim=\dimen270
-\MPnumerator=\count182
-\makeMPintoPDFobject=\count183
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count166
+\scratchdimen=\dimen260
+\scratchbox=\box48
+\nofMPsegments=\count167
+\nofMParguments=\count168
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count169
+\MPscratchDim=\dimen261
+\MPnumerator=\count170
+\makeMPintoPDFobject=\count171
+\everyMPtoPDFconversion=\toks46
 )
-\AtBeginShipoutBox=\box51
+\AtBeginShipoutBox=\box49
 Package hyperref Info: Link coloring OFF on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -884,7 +826,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count184
+\c@section@level=\count172
 )
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
@@ -899,27 +841,15 @@ LaTeX Info: Redefining \nameref on input line 3.
 ABD: EveryShipout initializing macros
 Preview: Fontsize 12pt
 Preview: PDFoutput 1
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-! Undefined control sequence.
-l.28 ...\;a\;b\right)$}, right of=H-3] (O) {\textt
-                                                  {eval(}$\left(+\;a\;b\righ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.28 ...{\textt{eval(}$\left(+\;a\;b\right)$\textt
-                                                  {)}};
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 <NeuralNetwork_1-pics.pdf, id=8, page=1, 273.02pt x 182.6825pt>
 File: NeuralNetwork_1-pics.pdf Graphic file (type pdf)
 
@@ -960,20 +890,21 @@ Package rerunfilecheck Info: File `NeuralNetwork_1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20123 strings out of 493029
- 372118 string characters out of 6136234
- 496780 words of memory out of 5000000
- 23279 multiletter control sequences out of 15000+600000
- 7566 words of font info for 28 fonts, out of 8000000 for 9000
+ 19550 strings out of 493029
+ 365628 string characters out of 6136234
+ 486485 words of memory out of 5000000
+ 22724 multiletter control sequences out of 15000+600000
+ 6892 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,6n,68p,420b,832s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,6n,68p,445b,832s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on NeuralNetwork_1.pdf (1 page, 43241 bytes).
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on NeuralNetwork_1.pdf (1 page, 46205 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  4 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
