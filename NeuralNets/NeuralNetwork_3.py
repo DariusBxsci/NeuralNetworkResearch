@@ -16,10 +16,10 @@ def evalPrefix(input): #takes array of inputs in prefix notation
         ret = input[0:(len(input)-1)/2 - 1] + [prefix(subin[0],int(subin[1]),int(subin[2]))] + input[(len(input)-1)/2 + 2:len(input)]
         return evalPrefix(ret)
 
-def evaluateNeuron(input):
+def evaluateNeuron(input): #evaluate the list of input tuples 
     ops = [None] * len(input);
     for i in input:
         ops[i[1]] = i[0]
     return evalPrefix(ops)
 
-print evaluateNeuron([['4',2],['2',4],['3',3],['+',0],['-',1]])
+print evaluateNeuron([('4',2),('2',4),('3',3),('+',0),('-',1)])
