@@ -91,7 +91,49 @@
  \end{tikzpicture}
  \caption{Single neuron receiving ordered intputs. \label{fig:sig-neuron}}
 \end{figure}
- 
+
+While this model is suitable for biological networks of neurons, a neural network in the computational sense would look more like an abstract syntax tree. In the following diagram, a network of operators and operands form a tree-like structure in which elements at lower levels represent values to manipulate which at higher levels interact with each other through arithmetic operations to produce a result. Any computation which involves a combination of operations on one or more values can be represented in this structure, such as logical operations or large-scale machine learning models.
+
+\newpage
+
+ \begin{figure}
+ \centering
+ \begin{tikzpicture}
+
+\tikzstyle{bordered} = [shape=rectangle, rounded corners, draw, outer sep=0,inner sep=6,minimum size=15]
+\tikzstyle{con} = [thick,->]
+\tikzstyle{message} = [shape=rectangle, thick, minimum width=2cm]
+
+	\node [bordered,red] (v1) at (1.5,8) {3};
+	\node [bordered,red] (v5) at (3.5,8) {4};
+	\node [bordered,red] (v4) at (4.5,8) {4};
+	\node [bordered,red] (v3) at (6.5,8) {2};
+	
+	\node [bordered,blue] (v6) at (5.5,9) {$\div$};
+	\node [bordered,blue] (v2) at (2.5,9) {$-$};
+
+	\node [bordered,blue] (v7) at (4,9.5) {$*$};
+
+	\node [bordered,black] (v8) at (4,11) {eval()};
+
+	\node [black] (v9) at (4,12.5) {\Huge -2};
+
+	\draw [con] (v1) edge (v2);
+	\draw [con] (v3) edge (v6);
+	\draw [con] (v4) edge (v6);
+	\draw [con] (v5) edge (v2);
+
+	\draw [con] (v2) edge (v7);
+	\draw [con] (v6) edge (v7);
+
+	\draw [con] (v7) edge (v8);
+
+	\draw [con] (v8) edge (v9);
+
+    
+ \end{tikzpicture}
+ \caption{An Abstract Syntax Tree of arithmetic operations. \label{fig:sig-neuron}}
+\end{figure}
 
 \section{Results}
 
