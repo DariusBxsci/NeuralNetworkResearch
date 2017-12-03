@@ -4,6 +4,8 @@
 \usetikzlibrary{positioning, intersections, calc, arrows}
 \usepackage[square,numbers]{natbib}
 \bibliographystyle{abbrvnat}
+\newcommand{\comment}[1]{}
+
 
 \newcommand{\thetitle}{Symbolic Manipulation and Computation in the Same Graph}
  
@@ -132,8 +134,53 @@ While this model is suitable for biological networks of neurons, a neural networ
 
     
  \end{tikzpicture}
- \caption{An Abstract Syntax Tree of arithmetic operations. \label{fig:sig-neuron}}
+ \caption{An Abstract Syntax Tree of arithmetic operations. \label{fig:sig-neuron}} 
 \end{figure}
+
+\comment{
+ \begin{figure}
+ \centering
+ \begin{tikzpicture}
+
+\tikzstyle{bordered} = [shape=rectangle, rounded corners, draw, outer sep=0,inner sep=6,minimum size=15]
+\tikzstyle{con} = [thick,->]
+\tikzstyle{message} = [shape=rectangle, thick, minimum width=2cm]
+
+	\node [bordered,red] (v1) at (0.5,8) {True};
+	\node [bordered,red] (v5) at (2.5,8) {False};
+	\node [bordered,red] (v4) at (5.5,8) {False};
+	\node [bordered,red] (v3) at (7.5,8) {True};
+	
+	\node [bordered,blue] (v6) at (6.5,9) {OR};
+	\node [bordered,blue] (v2) at (1.5,9) {AND};
+
+	\node [bordered,blue] (v7) at (4,9.5) {NOT};
+
+	\node [bordered,black] (v8) at (4,11) {eval()};
+
+	\node [black] (v9) at (4,12.5) {\Huge True};
+
+	\draw [con] (v1) edge (v2);
+	\draw [con] (v3) edge (v6);
+	\draw [con] (v4) edge (v6);
+	\draw [con] (v5) edge (v2);
+
+	\draw [con] (v2) edge (v7);
+	\draw [con] (v6) edge (v7);
+
+	\draw [con] (v7) edge (v8);
+
+	\draw [con] (v8) edge (v9);
+
+    
+ \end{tikzpicture}
+ \caption{An Abstract Syntax Tree of logical operations. \label{fig:sig-neuron}} 
+\end{figure}
+}
+
+\textcolor{red}{
+Research Idea: In a neural network, rather than just weights being updated through training algorithms, the operations by which the outputs to weights are combined is trained as well. In other words, instead of the inputs to each neuron being added together then put through an activation function, they may be multiplied, subtracted, divided, etc }
+
 
 \section{Results}
 

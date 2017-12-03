@@ -1,4 +1,4 @@
-#This code defines an abstract syntax tree as a binary tree
+#This code defines neural networks as an abstract syntax tree
 
 class Node:
     leftChild = None
