@@ -179,7 +179,8 @@ While this model is suitable for biological networks of neurons, a neural networ
 }
 
 \textcolor{red}{
-Research Idea: In a neural network, rather than just weights being updated through training algorithms, the operations by which the outputs to weights are combined is trained as well. In other words, instead of the inputs to each neuron being added together then put through an activation function, they may be multiplied, subtracted, divided, etc }
+Research Idea: In a typical network, values which pass through weights are multiplied by them. Instead of just the values of the weights themselves being updated during training, the operation by which they modify their input are trained as well. Regular feedforward neural networks often have trouble modelling certain simply relationships, since the operations behind weights and activation functions are not suitable. For example, $\frac{x}{y}$ would be impossible for a typical feed forward network (given $x$ and $y$ as inputs) to model since there exists no operation in the network by which the inverse of $y$, $\frac{1}{y}$, can be taken and multiplied by $x$ to yield a result. Biologically speaking, neurons in different parts of the brain operate very differently to one another, there's no reason the same shouldn't go for Artificial neurons.
+}
 
 
 \section{Results}
