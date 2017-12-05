@@ -59,10 +59,8 @@
 \section{Methods}
 
 \subsection{Network Construction}
-
- Figure \ref{fig:sig-neuron} illustrates a neuron that receives three ordered inputs. 
  
- \begin{figure}[h]
+ \begin{figure}[!htb]
  \centering
  \begin{tikzpicture}
 
@@ -98,9 +96,8 @@
 
 While this model is suitable for biological networks of neurons, a neural network in the computational sense would look more like an abstract syntax tree. In the following diagram, a network of operators and operands form a tree-like structure in which elements at lower levels represent values to manipulate which at higher levels interact with each other through arithmetic operations to produce a result. Any computation which involves a combination of operations on one or more values can be represented in this structure, such as logical or arithmetic operations.
 
-\newpage
 
- \begin{figure}
+ \begin{figure}[!htb]
  \centering
  \begin{tikzpicture}
 
@@ -137,15 +134,15 @@ While this model is suitable for biological networks of neurons, a neural networ
     
  \end{tikzpicture}
  \caption{An Abstract Syntax Tree of arithmetic operations. \label{fig:sig-neuron}} 
-\end{figure}
+ \end{figure}
 
- \begin{figure}
+ \begin{figure}[!htb]
  \centering
  \begin{tikzpicture}
-
-\tikzstyle{bordered} = [shape=rectangle, rounded corners, draw, outer sep=0,inner sep=6,minimum size=15]
-\tikzstyle{con} = [thick,->]
-\tikzstyle{message} = [shape=rectangle, thick, minimum width=2cm]
+ 
+ \tikzstyle{bordered} = [shape=rectangle, rounded corners, draw, outer sep=0,inner    sep=6,minimum size=15]
+ \tikzstyle{con} = [thick,->]
+ \tikzstyle{message} = [shape=rectangle, thick, minimum width=2cm]
 
 	\node [bordered,red] (v1) at (0.5,8) {True};
 	\node [bordered,red] (v5) at (2.5,8) {False};
@@ -176,9 +173,69 @@ While this model is suitable for biological networks of neurons, a neural networ
     
  \end{tikzpicture}
  \caption{An Abstract Syntax Tree of logical operations. \label{fig:sig-neuron}} 
-\end{figure}
+ \end{figure}
 
+	Syntax trees such as the ones shown above work perfectly, since each contain exclusively arithmetic or logical computations. In the trees shown below, however, the two computation classes are combined through multiplication and addition. The tree's results depend entirely on how we choose to evaluate $2 * True$ and $2 + True$.
 	
+	\newpage	
+	
+ \begin{figure}[!htb]
+ \centering
+ \begin{tikzpicture}
+ 
+ \tikzstyle{bordered} = [shape=rectangle, rounded corners, draw, outer sep=0,inner    sep=6,minimum size=15]
+ \tikzstyle{con} = [thick,->]
+ \tikzstyle{message} = [shape=rectangle, thick, minimum width=2cm]
+
+	\node [bordered,red] (v1) at (0.5,8) {5};
+	\node [bordered,red] (v5) at (2.5,8) {3};
+	\node [bordered,red] (v4) at (5.5,8) {False};
+	\node [bordered,red] (v3) at (7.5,8) {True};
+	
+	\node [bordered,blue] (v6) at (6.5,9) {OR};
+	\node [bordered,blue] (v2) at (1.5,9) {-};
+
+	\node [bordered,blue] (v7) at (4,9.5) {*};
+
+
+	\node [black] (v9) at (4,12) {\Huge eval($2 * True$)};
+
+	\draw [con] (v1) edge (v2);
+	\draw [con] (v3) edge (v6);
+	\draw [con] (v4) edge (v6);
+	\draw [con] (v5) edge (v2);
+
+	\draw [con] (v2) edge (v7);
+	\draw [con] (v6) edge (v7);
+
+	\draw [con] (v7) edge (v9);
+	
+	
+	\node [bordered,red] (vv1) at (10.5,8) {5};
+	\node [bordered,red] (vv5) at (12.5,8) {3};
+	\node [bordered,red] (vv4) at (15.5,8) {False};
+	\node [bordered,red] (vv3) at (17.5,8) {True};
+	
+	\node [bordered,blue] (vv6) at (16.5,9) {OR};
+	\node [bordered,blue] (vv2) at (11.5,9) {-};
+
+	\node [bordered,blue] (vv7) at (14,9.5) {+};
+
+	\node [black] (vv9) at (14,12) {\Huge eval($2 + True$)};
+
+	\draw [con] (vv1) edge (vv2);
+	\draw [con] (vv3) edge (vv6);
+	\draw [con] (vv4) edge (vv6);
+	\draw [con] (vv5) edge (vv2);
+
+	\draw [con] (vv2) edge (vv7);
+	\draw [con] (vv6) edge (vv7);
+	
+	\draw [con] (vv7) edge (vv9);
+    
+ \end{tikzpicture}
+ \caption{Abstract Syntax Trees of logical and arithmetic operations.} 
+ \end{figure}
 
 \section{Results}
 
