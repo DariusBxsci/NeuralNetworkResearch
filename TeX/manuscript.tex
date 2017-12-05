@@ -30,13 +30,15 @@
 \newpage
 
 \begin{abstract}
-    General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation. Here we show how a graph can \ldots
+    General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation.
 \end{abstract}
 \newpage
 
 
 \section{Background}
 
+	Neural networks have been used for decades to solve a wide variety of machine learning tasks without the need for explicit programming of the solutions to be done by humans. Typically the networks only make use of arithmetic computation, meaning that logical operations are not incorportated into the models. This hasn't been done because there is no clear method by which logical information (TRUE/FALSE) should be converted to numerical information, and vice versa. In Computer Science, True and False are generally represented as 1 and 0, respectively, whereas in Mathematics, they are often represented as -1 and 1 \textcolor{red}{Which specific fields of Math and Compsci?}. Our research aims to construct a neural network which effectively combines logical and arithmetic computation, and apply this network to a problem which demostrates it's ability to perform symbolic reasoning.
+	
     \begin{enumerate}
         \item What is symbolic computation?
         
@@ -94,7 +96,7 @@
  \caption{Single neuron receiving ordered intputs. \label{fig:sig-neuron}}
 \end{figure}
 
-While this model is suitable for biological networks of neurons, a neural network in the computational sense would look more like an abstract syntax tree. In the following diagram, a network of operators and operands form a tree-like structure in which elements at lower levels represent values to manipulate which at higher levels interact with each other through arithmetic operations to produce a result. Any computation which involves a combination of operations on one or more values can be represented in this structure, such as logical operations or large-scale machine learning models.
+While this model is suitable for biological networks of neurons, a neural network in the computational sense would look more like an abstract syntax tree. In the following diagram, a network of operators and operands form a tree-like structure in which elements at lower levels represent values to manipulate which at higher levels interact with each other through arithmetic operations to produce a result. Any computation which involves a combination of operations on one or more values can be represented in this structure, such as logical or arithmetic operations.
 
 \newpage
 
@@ -137,7 +139,6 @@ While this model is suitable for biological networks of neurons, a neural networ
  \caption{An Abstract Syntax Tree of arithmetic operations. \label{fig:sig-neuron}} 
 \end{figure}
 
-\comment{
  \begin{figure}
  \centering
  \begin{tikzpicture}
@@ -176,12 +177,8 @@ While this model is suitable for biological networks of neurons, a neural networ
  \end{tikzpicture}
  \caption{An Abstract Syntax Tree of logical operations. \label{fig:sig-neuron}} 
 \end{figure}
-}
 
-\textcolor{red}{
-Research Idea: In a typical network, values which pass through weights are multiplied by them. Instead of just the values of the weights themselves being updated during training, the operation by which they modify their input are trained as well. Regular feedforward neural networks often have trouble modelling certain simply relationships, since the operations behind weights and activation functions are not suitable. For example, $\frac{x}{y}$ would be impossible for a typical feed forward network (given $x$ and $y$ as inputs) to model since there exists no operation in the network by which the inverse of $y$, $\frac{1}{y}$, can be taken and multiplied by $x$ to yield a result. Biologically speaking, neurons in different parts of the brain operate very differently to one another, there's no reason the same shouldn't go for Artificial neurons.
-}
-
+	
 
 \section{Results}
 
