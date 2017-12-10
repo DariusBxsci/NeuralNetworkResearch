@@ -1,6 +1,11 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace, fancyhdr, hyperref, xcolor, tikz}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{marginnote}
+
+
 \usetikzlibrary{positioning, intersections, calc, arrows}
 \usepackage[square,numbers]{natbib}
 \bibliographystyle{abbrvnat}
@@ -133,7 +138,7 @@ While this model is suitable for biological networks of neurons, a neural networ
 
     
  \end{tikzpicture}
- \caption{An Abstract Syntax Tree of arithmetic operations. \label{fig:sig-neuron}} 
+ \caption{An Abstract Syntax Tree of arithmetic operations.} 
  \end{figure}
 
  \begin{figure}[!htb]
@@ -172,8 +177,11 @@ While this model is suitable for biological networks of neurons, a neural networ
 
     
  \end{tikzpicture}
- \caption{An Abstract Syntax Tree of logical operations. \label{fig:sig-neuron}} 
+ \caption{An Abstract Syntax Tree of logical operations.} 
  \end{figure}
+
+\subsection{Using each arithmetic operator with a logical operand} 
+{\it Code that corresponds with this section can be found in NeuralNetwork\_5.py}
 
 	Syntax trees such as the ones shown above work perfectly, since each contain exclusively arithmetic or logical computations. In the trees shown below, however, the two computation classes are combined through multiplication and addition. The tree's results depend entirely on how we choose to evaluate $2 * True$ and $2 + True$.
 	
@@ -181,7 +189,7 @@ While this model is suitable for biological networks of neurons, a neural networ
 	
  \begin{figure}[!htb]
  \centering
- \begin{tikzpicture}
+ \begin{tikzpicture}[scale=0.8]
  
  \tikzstyle{bordered} = [shape=rectangle, rounded corners, draw, outer sep=0,inner    sep=6,minimum size=15]
  \tikzstyle{con} = [thick,->]
@@ -236,6 +244,109 @@ While this model is suitable for biological networks of neurons, a neural networ
  \end{tikzpicture}
  \caption{Abstract Syntax Trees of logical and arithmetic operations.} 
  \end{figure}
+
+An error would be the result if the two expressions were to be evaluated since $True$ and $False$ are not numerical values so they aren't compatible with numerical operations like $*$ and $+$. Now the question arises, {\it How can logical symbols be converted into numerical values?} In the context of Computer Science and Programming, one may represent $False$ as $0$ and $True$ as $1$. In the case of multiplication, this format would cause $eval()$ to yield $0$ if one of the operands is $False$ and whatever the other operand is if one is $True$. Let us now model a real-world situation in which logical and arithmetic computation are both necessary for a result.
+
+\begin{figure}[H]
+ 
+  \begin{subfigure}{1.0\textwidth}
+\centering
+
+\begin{tikzpicture}
+
+ 	\tikzstyle{bordered} = [shape=rectangle, rounded corners, draw, outer sep=0,inner    sep=6,minimum size=15]
+ 	\tikzstyle{con} = [thick,->]
+ 	\tikzstyle{message} = [shape=rectangle, thick, minimum width=2cm]
+
+	\node [bordered,red] (vm1) at (0,6.5) {Age of person 1};
+	\node [bordered,red] (vm5) at (3,6.5) {Age of person 2};
+	\node [bordered,red] (v1) at (0,7.5) {16};
+	\node [bordered,red] (v5) at (3,7.5) {14};
+	
+	\node [bordered,red] (v4) at (7.5,6.5) {Is the second person younger?};
+	\node [bordered,red] (v3) at (7.5,8.5) {True};
+	
+	\node [bordered,blue] (v2) at (1.5,8.5) {-};
+
+	\node [bordered,blue] (v7) at (4,9) {*};
+
+
+	\node [black] (v9) at (4,10.5) {\Huge 2};
+
+	\draw [con] (vm1) edge (v1);
+	\draw [con] (vm5) edge (v5);	
+
+	\draw [con] (v1) edge (v2);
+	\draw [con] (v4) edge (v3);
+	\draw [con] (v5) edge (v2);
+
+	\draw [con] (v3) edge node[sloped, below] {True = 1}  (v7);
+
+	\draw [con] (v2) edge(v7);
+
+	\draw [con] (v7) edge (v9);
+	
+\end{tikzpicture}
+    
+    \caption{First sibling is younger}    
+    
+  \end{subfigure}
+    
+  \begin{subfigure}{1.0\textwidth}
+  \centering
+  
+\begin{tikzpicture}
+
+ 	\tikzstyle{bordered} = [shape=rectangle, rounded corners, draw, outer sep=0,inner    sep=6,minimum size=15]
+ 	\tikzstyle{con} = [thick,->]
+ 	\tikzstyle{message} = [shape=rectangle, thick, minimum width=2cm]
+
+	\node [bordered,red] (vm1) at (0,6.5) {Age of Sibling 1};
+	\node [bordered,red] (vm5) at (3,6.5) {Age of Sibling 2};
+	\node [bordered,red] (v1) at (0,7.5) {15};
+	\node [bordered,red] (v5) at (3,7.5) {20};
+	
+	\node [bordered,red] (v4) at (7.5,6.5) {Is the second person younger?};
+	\node [bordered,red] (v3) at (7.5,8.5) {False};
+	
+	\node [bordered,blue] (v2) at (1.5,8.5) {-};
+
+	\node [bordered,blue] (v7) at (4,9) {*};
+
+
+	\node [black] (v9) at (4,10.5) {\Huge 0};
+
+	\draw [con] (vm1) edge (v1);
+	\draw [con] (vm5) edge (v5);	
+
+	\draw [con] (v1) edge (v2);
+	\draw [con] (v4) edge (v3);
+	\draw [con] (v5) edge (v2);
+
+	\draw [con] (v3) edge node[sloped, below] {False = 0}  (v7);
+
+	\draw [con] (v2) edge(v7);
+
+	\draw [con] (v7) edge (v9);
+	
+\end{tikzpicture}  
+  
+    \caption{Second sibling is younger}
+    
+  \end{subfigure}
+  
+ \caption{A syntax tree which models how many years one person is older than another, using a combination of Arithmetic and Logical computation.} 
+ \end{figure}
+ 
+ 
+ In the above trees, logical and numerical information are effectively combined to produce an output. If only numerical information were used (i.e. the ages of the two people), only the difference of the two numbers would be calculated, yielding $-5$ in the second case. However, a person cannot be a negative number of years older than another, so $0$ would be a more appropriate result. The above trees solve this problem by requiring the user to give a boolean value representing whether or not the second person is younger than the first, then the $True/False$ value is converted into a number according to previously defined policy and multiplied with the difference of the two ages. \\
+ 
+ We have just successfully formulated a method by which logical symbols and numbers can be combined through the multiplication operator, but how would the two be combined through the subtraction, division, and addition operators? \\
+ 
+ The process of multiplication can be broken down into a series of repeated additions. For example, $4 * 3$ is the same as $4 + 4 + 4$. Therefor, the expression $4 * True$ can be broken down into $True + True + True + True$. Let us add $True$ to this expression and get $True + True + True + True + True$, and simplify it to just $5 * True$ (by the distributive property of multiplication), which by our multiplication rule would evaluate to $5$. By this logic, adding $True$ to a value is equivalent to adding $1$, and adding $False$ is equivalent to adding $0$. We can extend this to subtraction, so that subtracting $True$ subtracts $1$ and $False$ subtracts $0$ \\
+
+ The division and multiplication operators are inverse operations. In other words, if a number is divided by number, $x$, multiplying the result by $x$ would yield the original number. Naturally, this relationship should remain when using logical operands. However, this poses a major problem since if a value is multiplied by $False$, the output will be $0$, and there is no number that $False$ can be converted into such that dividing $0$ by it will yield the initial value (if the initial value is not $0$).
+\textcolor{red}{- How can/should this problem be reconciled?} \\
 
 \section{Results}
 
