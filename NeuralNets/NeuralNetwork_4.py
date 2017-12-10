@@ -49,13 +49,15 @@ def BuildTree(lst): #helper function to create a full syntax tree from a list us
     return source
 
 
+def testTrees():
+    #simple arithmetic:
+    arithmeticTree = ["*", ["-",["3"],["5"]], ["/",["4"],["2"]]] #outputs -4
+    arithmeticTree = BuildTree(arithmeticTree);
+    print arithmeticTree.eval();
 
-#simple arithmetic:
-arithmeticTree = ["*", ["-",["3"],["5"]], ["/",["4"],["2"]]] #outputs -4
-arithmeticTree = BuildTree(arithmeticTree);
-print arithmeticTree.eval();
+    #simple logic:
+    logicalTree = ["not",["and", ["or",["True"],["False"]], ["and",["False"],["True"]]]] #outputs True
+    logicalTree = BuildTree(logicalTree);
+    print logicalTree.eval();
 
-#simple logic:
-logicalTree = ["not",["and", ["or",["True"],["False"]], ["and",["False"],["True"]]]] #outputs True
-logicalTree = BuildTree(logicalTree);
-print logicalTree.eval();
+    return
