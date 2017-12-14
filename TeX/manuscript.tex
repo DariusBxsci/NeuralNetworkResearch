@@ -301,8 +301,8 @@ An error would be the result if the two expressions were to be evaluated since $
  	\tikzstyle{con} = [thick,->]
  	\tikzstyle{message} = [shape=rectangle, thick, minimum width=2cm]
 
-	\node [bordered,red] (vm1) at (0,6.5) {Age of Sibling 1};
-	\node [bordered,red] (vm5) at (3,6.5) {Age of Sibling 2};
+	\node [bordered,red] (vm1) at (0,6.5) {Age of person 1};
+	\node [bordered,red] (vm5) at (3,6.5) {Age of person 2};
 	\node [bordered,red] (v1) at (0,7.5) {15};
 	\node [bordered,red] (v5) at (3,7.5) {20};
 	
@@ -347,6 +347,14 @@ An error would be the result if the two expressions were to be evaluated since $
 
  The division and multiplication operators are inverse operations. In other words, if a number is divided by number, $x$, multiplying the result by $x$ would yield the original number. Naturally, this relationship should remain when using logical operands. However, this poses a major problem since if a value is multiplied by $False$, the output will be $0$, and there is no number that $False$ can be converted into such that dividing $0$ by it will yield the initial value (if the initial value is not $0$).
 \textcolor{red}{- How can/should this problem be reconciled?} \\
+
+\subsection{An alternative solution}
+
+	In the previous subsection, we attempted to solve the problem of combining logical and numerical symols by converting $True$ into $1$ and $False$ into $2$. In doing this, we noticed that the multiplication operator could be used with a logical symbol to either propogate or to destroy a numerical signal. On the other hand, we were not able to put the addition, subtraction, and division operators to meaningful use, as we were with multiplication. From these results, it should be clear that an alternative solution is necessary. To discover this solution, we will examine a few situations where the two brands of computation are necessary, and formulate how the two can be combined into one family of computations. 
+	
+(a tree which models a situation where logical and numerical information need to be combined via some operator)
+
+	It is unclear as to how the two should be combined such that the meaning behind each value is retained. In the above situation... (describe how one would combine the two in the above situation to yield the correct output).
 
 \section{Results}
 

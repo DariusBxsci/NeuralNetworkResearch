@@ -24,3 +24,6 @@ Lollipop model:
 Abstract Syntax Tree
 	-Operators are interchangeable, just as operands are.
 	-Can be implemented similarly to binary trees
+
+Combining Logical and Numerical values:
+	-simply turning true to 1 and false to 0 works well with multiplication, but is useless with addition and subtraction, and is unusable with division

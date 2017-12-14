@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  9 DEC 2017 20:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.7)  13 DEC 2017 23:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -695,22 +695,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 348--350
 
  []
 
-No file manuscript.bbl.
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
+No file manuscript.bbl.
+[8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
  (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 365.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 365.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: 6D1C3F6F306441C70C55EC8ABDE27CFF;346.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
+(rerunfilecheck)             Checksum: 4311CCDB27E8D0E4C783A31F62DC85D5;418.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 365.
  ) 
 Here is how much of TeX's memory you used:
- 18406 strings out of 493029
- 352867 string characters out of 6136234
- 433718 words of memory out of 5000000
- 21637 multiletter control sequences out of 15000+600000
+ 18409 strings out of 493029
+ 352903 string characters out of 6136234
+ 433733 words of memory out of 5000000
+ 21638 multiletter control sequences out of 15000+600000
  11291 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,68p,917b,993s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -726,10 +727,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 >
-Output written on manuscript.pdf (7 pages, 158882 bytes).
+Output written on manuscript.pdf (8 pages, 160816 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
