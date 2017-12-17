@@ -1,17 +1,11 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{setspace, fancyhdr, hyperref, xcolor, tikz}
-\usepackage{subcaption}
-\usepackage{float}
-\usepackage{marginnote}
-
+\usepackage{setspace, fancyhdr, hyperref, xcolor, tikz, subcaption, float, marginnote}
 
 \usetikzlibrary{positioning, intersections, calc, arrows}
 \usepackage[square,numbers]{natbib}
 \bibliographystyle{abbrvnat}
 \newcommand{\comment}[1]{}
-
-
 \newcommand{\thetitle}{Symbolic Manipulation and Computation in the Same Graph}
  
 \pagestyle{fancy}
@@ -20,8 +14,6 @@
 \lhead{Darius Barbano}
 \rfoot{Page \thepage}
 \doublespacing
-
-
 
 \author{Darius Barbano}
 \title{\thetitle}
@@ -35,7 +27,6 @@
 \newpage
 
 \begin{abstract}
-
     General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation. \\
     
     In order for neural networks to solve more complex problems, they must be able to manipulate representations of meaningful information. While current networks have been largely successful in a variety of tasks from image classification to sentiment analysis, the internal computations of the networks have only consisted of many basic arithmetic operations. This model is effective in dealing with and taking advantage of relatively transparent patterns in the training data, but in no way does it attempt to develop meaningful representations of the data. To build a model which generates new text based on some previously written text, modern networks would construct (through training) a framework which determines which word has the highest probability of logically making sense given the previous words in the text. These networks have no consideration for the meaning of the words chosen, only their probability of being correct as meaningless objects. For humans, language is anything but a series of meaningless objects called words, rather each word must be understood in terms of it's meaning, connotation, and acceptibility in the context of what is being said. We learn these aspects of the words we use over the course of our lives, and we constantly refer to these memories when choosing which words to use. In the case of human intelligence, each object of understanding (words, concepts, etc) is directly tied to memories and experiences which give them meaning. For neural networks to solve problems with these highly complex objects, they must represent them in a similar fashion. \\
@@ -70,8 +61,12 @@
 \section{Methods}
 
 \subsection{Network Construction}
+
+ Figure \ref{fig:sig-neuron} illustrates a neuron that receives three ordered inputs. 
+
  
  \begin{figure}[!htb]
+
  \centering
  \begin{tikzpicture}
 
@@ -104,6 +99,7 @@
  \end{tikzpicture}
  \caption{Single neuron receiving ordered intputs. \label{fig:sig-neuron}}
 \end{figure}
+
 
 While this model is suitable for biological networks of neurons, a neural network in the computational sense would look more like an abstract syntax tree. In the following diagram, a network of operators and operands form a tree-like structure in which elements at lower levels represent values to manipulate which at higher levels interact with each other through arithmetic operations to produce a result. Any computation which involves a combination of operations on one or more values can be represented in this structure, such as logical or arithmetic operations.
 
