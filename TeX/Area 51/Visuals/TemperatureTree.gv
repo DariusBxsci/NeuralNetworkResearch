@@ -1,0 +1,18 @@
+## Basic syntax trees for NeuralNetwork_1
+
+digraph TemperatureTree {
+
+	pred -> Ysnow [label="add 0" dir=back];
+	pred -> Yrain [label="add 5" dir=back];
+	pred -> Ytemp [dir=back];
+
+	Ytemp -> "Yesterday's temperature" [dir=back];
+	Ysnow -> "Did it snow yesterday?" [dir=back];
+	Yrain -> "Did it rain yesterday?" [dir=back];
+
+	Ytemp[label="55"]
+	Ysnow[label="False"]
+	Yrain[label="True"]
+	pred[label="60"]	
+
+}
