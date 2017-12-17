@@ -35,7 +35,13 @@
 \newpage
 
 \begin{abstract}
-    General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation.
+
+    General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation. \\
+    
+    In order for neural networks to solve more complex problems, they must be able to manipulate representations of meaningful information. While current networks have been largely successful in a variety of tasks from image classification to sentiment analysis, the internal computations of the networks have only consisted of many basic arithmetic operations. This model is effective in dealing with and taking advantage of relatively transparent patterns in the training data, but in no way does it attempt to develop meaningful representations of the data. To build a model which generates new text based on some previously written text, modern networks would construct (through training) a framework which determines which word has the highest probability of logically making sense given the previous words in the text. These networks have no consideration for the meaning of the words chosen, only their probability of being correct as meaningless objects. For humans, language is anything but a series of meaningless objects called words, rather each word must be understood in terms of it's meaning, connotation, and acceptibility in the context of what is being said. We learn these aspects of the words we use over the course of our lives, and we constantly refer to these memories when choosing which words to use. In the case of human intelligence, each object of understanding (words, concepts, etc) is directly tied to memories and experiences which give them meaning. For neural networks to solve problems with these highly complex objects, they must represent them in a similar fashion. \\
+    
+\textcolor{red}{- I'm unclear as to whether our focus is to combine Logical symbols and Numerical ones, or to more broadly figure out how to represent complex objects (as stated above)}    
+    
 \end{abstract}
 \newpage
 
@@ -352,9 +358,22 @@ An error would be the result if the two expressions were to be evaluated since $
 
 	In the previous subsection, we attempted to solve the problem of combining logical and numerical symols by converting $True$ into $1$ and $False$ into $2$. In doing this, we noticed that the multiplication operator could be used with a logical symbol to either propogate or to destroy a numerical signal. On the other hand, we were not able to put the addition, subtraction, and division operators to meaningful use, as we were with multiplication. From these results, it should be clear that an alternative solution is necessary. To discover this solution, we will examine a few situations where the two brands of computation are necessary, and formulate how the two can be combined into one family of computations. 
 	
-(a tree which models a situation where logical and numerical information need to be combined via some operator)
+(a tree which models a situation where logical and numerical information need to be combined via some operator) \textcolor{red}{- What sort of situation REQUIRES this?}
 
-	It is unclear as to how the two should be combined such that the meaning behind each value is retained. In the above situation... (describe how one would combine the two in the above situation to yield the correct output).
+	It is unclear how the two should be combined such that the meaning behind each value is retained. In the above situation... (describe how one would combine the two in the above situation to yield the correct output). \\ \\
+	
+	\textcolor{red}{Ideas for solving the problem of combining the two forms of information:}
+	
+\begin{enumerate}
+
+\item The simplest solution would be to simply convert all information into one type, rather than having them be separate. The issue with this that the converted information may lose it's representational meaning.
+
+\item Another solution would be to store all information as a tuple with a numerical element and a logical element. Numerical operations would exclusively act on numbers and logical operations on logical symbols.
+
+\item Some new data structure could be made which exists as a postion in space, where one dimension describes logical state and the other describes numerical state. Similar to points on a cartesian plane, except the 'x' axis would be True/False, and the 'y' axis would be a numerical value. Operations could be performed on this object as transformations in the same way they could be done to points on an xy plane. This solution could be advantageous in the long run since any new data type can be added to the data structure by adding a new dimension for it and tranforming points in operations in the same way.
+
+\end{enumerate}
+
 
 \section{Results}
 
