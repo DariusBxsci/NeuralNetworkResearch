@@ -1,5 +1,8 @@
 -- The purpose of this document is to record notes/reflect about each portion of our research and about different ideas regarding the direction of the project --
 
+USEFUL/INTERESTING PAPERS:
+	Symbolic reasoning in neural nets: https://www.aaai.org/ocs/index.php/SSS/SSS15/paper/viewPDFInterstitial/10281/10029
+
 Addition/Subtraction Network:
 	-Input to a network may be represented as a list, then passed into the eval() function
 
@@ -8,7 +11,6 @@ Input Permutation Network:
 	-Use a permutation matrix to reformat an expression such as 'a + b + c - d' into one which can be parsed by eval() 
 	-Write an algorithm to generalize the matrix for any size of the expression
 	-The resulting expression should look something like: '- + + a b c d'
-	-
 
 Lollipop model:
 	-Several inputs and a single output
@@ -16,5 +18,12 @@ Lollipop model:
 		[2, 1] [+, 0] [3, 2],
 		which have an operand or opertator in the first index, and the position of that element in the second
 	-Possible extension:
-		-implement some sort of simple algorithm to detirmine the correct position of inputs given some output examples
+		-implement some sort of simple algorithm to determine the correct position of inputs given some output examples
 			-RESEARCH QUESTION: ^^^ Is this possible? ^^^
+
+Abstract Syntax Tree
+	-Operators are interchangeable, just as operands are.
+	-Can be implemented similarly to binary trees
+
+Combining Logical and Numerical values:
+	-simply turning true to 1 and false to 0 works well with multiplication, but is useless with addition and subtraction, and is unusable with division
