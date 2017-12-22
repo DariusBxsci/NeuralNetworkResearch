@@ -1,17 +1,11 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{setspace, fancyhdr, hyperref, xcolor, tikz}
-\usepackage{subcaption}
-\usepackage{float}
-\usepackage{marginnote}
-
+\usepackage{setspace, fancyhdr, hyperref, xcolor, tikz, subcaption, float, marginnote}
 
 \usetikzlibrary{positioning, intersections, calc, arrows}
 \usepackage[square,numbers]{natbib}
 \bibliographystyle{abbrvnat}
 \newcommand{\comment}[1]{}
-
-
 \newcommand{\thetitle}{Symbolic Manipulation and Computation in the Same Graph}
  
 \pagestyle{fancy}
@@ -20,8 +14,6 @@
 \lhead{Darius Barbano}
 \rfoot{Page \thepage}
 \doublespacing
-
-
 
 \author{Darius Barbano}
 \title{\thetitle}
@@ -35,7 +27,6 @@
 \newpage
 
 \begin{abstract}
-
     General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation. \\
     
     In order for neural networks to solve more complex problems, they must be able to manipulate representations of meaningful information. While current networks have been largely successful in a variety of tasks from image classification to sentiment analysis, the internal computations of the networks have only consisted of many basic arithmetic operations. This model is effective in dealing with and taking advantage of relatively transparent patterns in the training data, but in no way does it attempt to develop meaningful representations of the data. To build a model which generates new text based on some previously written text, modern networks would construct (through training) a framework which determines which word has the highest probability of logically making sense given the previous words in the text. These networks have no consideration for the meaning of the words chosen, only their probability of being correct as meaningless objects. For humans, language is anything but a series of meaningless objects called words, rather each word must be understood in terms of it's meaning, connotation, and acceptibility in the context of what is being said. We learn these aspects of the words we use over the course of our lives, and we constantly refer to these memories when choosing which words to use. In the case of human intelligence, each object of understanding (words, concepts, etc) is directly tied to memories and experiences which give them meaning. For neural networks to solve problems with these highly complex objects, they must represent them in a similar fashion. \\
@@ -70,8 +61,12 @@
 \section{Methods}
 
 \subsection{Network Construction}
+
+ Figure \ref{fig:sig-neuron} illustrates a neuron that receives three ordered inputs. 
+
  
  \begin{figure}[!htb]
+
  \centering
  \begin{tikzpicture}
 
@@ -104,6 +99,7 @@
  \end{tikzpicture}
  \caption{Single neuron receiving ordered intputs. \label{fig:sig-neuron}}
 \end{figure}
+
 
 While this model is suitable for biological networks of neurons, a neural network in the computational sense would look more like an abstract syntax tree. In the following diagram, a network of operators and operands form a tree-like structure in which elements at lower levels represent values to manipulate which at higher levels interact with each other through arithmetic operations to produce a result. Any computation which involves a combination of operations on one or more values can be represented in this structure, such as logical or arithmetic operations.
 
@@ -373,6 +369,56 @@ An error would be the result if the two expressions were to be evaluated since $
 \item Some new data structure could be made which exists as a postion in space, where one dimension describes logical state and the other describes numerical state. Similar to points on a cartesian plane, except the 'x' axis would be True/False, and the 'y' axis would be a numerical value. Operations could be performed on this object as transformations in the same way they could be done to points on an xy plane. This solution could be advantageous in the long run since any new data type can be added to the data structure by adding a new dimension for it and tranforming points in operations in the same way.
 
 \end{enumerate}
+
+
+\subsection{Combining computation through conditional statements}
+% https://en.wikipedia.org/wiki/Abstract_syntax_tree#/media/File:Abstract_syntax_tree_for_Euclidean_algorithm.svg
+
+	Conditional statements, such as $if$ and $while$ may be used to combine categorical and numerical computation. Each conditional statement accepts an input expression, and has a body which is defined before runtime. If the input expression evaluates to $True$, then the statement will execute whatever is in the body. The body may contain computations of any kind, including numerical. In the following examples, conditional statements are used to execute some numerical computations depending on the result of some categorical computations.
+	
+\begin{figure}
+
+\begin{tikzpicture}
+
+	\tikzstyle{operation} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+	\tikzstyle{value} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!40]
+ 	\tikzstyle{function} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = red!40]
+	\tikzstyle{con} = [thick,->]
+
+	\node[function] (StatementSequence) at (9,7) {Statement Sequence};
+
+	\node[operation] (return) at (13,5.5) {return};
+	\node[value] (returnVal) at (13,3.5) {NumPrimes};
+	
+	\draw[->](StatementSequence) -> (return) ;	
+	\draw[->](return) -> (returnVal) ;	
+	
+	\node[operation] (while) at (6,4) {while};
+	\node[value] (CurrentValue) at (0,0) {CurrentValue};
+	\node[value] (MaxValue) at (3,0) {MaxValue};
+	\node[operation] (lessThan) at (1.5,2.5) {compare op: $<=$};
+	
+	\draw[->](StatementSequence) -> (while) ;	
+	\draw[->](while) -> (lessThan) node[midway,sloped,above] {condition} ;	
+	\draw[->](lessThan) -> (MaxValue) ;	
+	\draw[->](lessThan) -> (CurrentValue) ;	
+
+	\node[operation] (incrementCurr) at (6,2.5) {CurrentValue++};
+	\draw[->](while) -> (incrementCurr) ;	
+	
+	\node[operation] (branch) at (10.5,2.5) {branch};
+	\node[function] (isPrime) at (9,0) {isPrime(CurrentValue)};
+	\node[operation] (incrementPrime) at (13,0) {NumPrimes++};
+	
+	\draw[->](while) -> (branch) ;
+	\draw[->](branch) -> (isPrime)  node[midway,sloped,above] {condition};		
+	\draw[->](branch) -> (incrementPrime)  node[midway,sloped,above] {if-body};	
+	
+\end{tikzpicture}
+
+\caption{A syntax tree that defines a procedure for counting the number of primes up to a certain value. The procedure begins with NumPrimes and CurrentValue set to $0$, and MaxValue set to the highest value to check for prime status. isPrime is a function that returns $True$ if the input value is a prime number, and $False$ if it isn't.}
+
+\end{figure}
 
 
 \section{Results}

@@ -3,5 +3,6 @@
 \contentsline {subsection}{\numberline {2.1}Network Construction}{4}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Using each arithmetic operator with a logical operand}{5}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}An alternative solution}{7}{subsection.2.3}
-\contentsline {section}{\numberline {3}Results}{8}{section.3}
-\contentsline {section}{\numberline {4}Conclusions}{8}{section.4}
+\contentsline {subsection}{\numberline {2.4}Combining computation through conditional statements}{8}{subsection.2.4}
+\contentsline {section}{\numberline {3}Results}{9}{section.3}
+\contentsline {section}{\numberline {4}Conclusions}{9}{section.4}
