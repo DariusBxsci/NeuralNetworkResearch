@@ -29,7 +29,8 @@
 \begin{abstract}
     General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation. \\
     
-    In order for neural networks to solve more complex problems, they must be able to manipulate representations of meaningful information. While current networks have been largely successful in a variety of tasks from image classification to sentiment analysis, the internal computations of the networks have only consisted of many basic arithmetic operations. This model is effective in dealing with and taking advantage of relatively transparent patterns in the training data, but in no way does it attempt to develop meaningful representations of the data. To build a model which generates new text based on some previously written text, modern networks would construct (through training) a framework which determines which word has the highest probability of logically making sense given the previous words in the text. These networks have no consideration for the meaning of the words chosen, only their probability of being correct as meaningless objects. For humans, language is anything but a series of meaningless objects called words, rather each word must be understood in terms of it's meaning, connotation, and acceptibility in the context of what is being said. We learn these aspects of the words we use over the course of our lives, and we constantly refer to these memories when choosing which words to use. In the case of human intelligence, each object of understanding (words, concepts, etc) is directly tied to memories and experiences which give them meaning. For neural networks to solve problems with these highly complex objects, they must represent them in a similar fashion. \\
+    In order for neural networks to solve more complex problems, they must be able to manipulate representations of meaningful information. While current networks have been largely successful in a variety of tasks from image classification to sentiment analysis, the internal computations of the networks have only consisted of many basic arithmetic operations. This model is effective in dealing with and taking advantage of relatively transparent patterns in the training data, but in no way does it attempt to develop meaningful representations of the data. To build a model which generates new text based on some previously written text, modern networks would construct (through training) a framework which determines which word has the highest probability of logically making sense given the previous words in the text. These networks have no consideration for the meaning of the words chosen, only their probability of being correct as meaningless objects. For humans, language is anything but a series of meaningless objects called words, rather each word must be understood in terms of it's meaning, connotation, and acceptibility in the context of what is being said. We learn these aspects of the words we use over the course of our lives, and we constantly refer to these memories when choosing which words to use. In the case of human intelligence, each object of understanding (words, concepts, etc) is directly tied to memories and experiences which give them meaning. For neural networks to solve problems with these highly complex objects, they must represent them in a similar fashion. 
+\textcolor{red} {- old abstract} \\
     
 \textcolor{red}{- I'm unclear as to whether our focus is to combine Logical symbols and Numerical ones, or to more broadly figure out how to represent complex objects (as stated above)}    
     
@@ -39,7 +40,56 @@
 
 \section{Background}
 
+    On a daily basis, humans process numerical information in order to make decisions. For instance someone may compute the amount of time they have to complete a task by subtracting the time of the task deadline by the current time. We also process binary categorical ($True/False$) information; we may choose to or not to wear gloves outside depending on whether or not it is snowing.We combine the two forms of information to make decisions as well. Such an example would be deciding to wear a jacket outside if the temperature is below a certain threshold. Each of the three stated examples may be represented as abstract syntax trees: \textcolor{red} {- new background}
+    
+\begin{figure}[!htb]
+
+\begin{tikzpicture}
+
+	\tikzstyle{operation} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+	\tikzstyle{value} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!40]
+	\tikzstyle{logic} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = yellow!40]
+ 	\tikzstyle{function} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = red!40]
+	\tikzstyle{con} = [thick,->]
+
+	\node[value] (TimeLeft) at (4,4) {Remaining time to complete task};
+	\node[operation] (Subtract) at (4,2) {Operator: -};
+	\node[value] (Deadline) at (2,0) {Task Deadline};
+	\node[value] (CurrentTime) at (6,0) {Current Time};
+
+	\draw[->](TimeLeft) -> (Subtract) ;	
+	\draw[->](Subtract) -> (Deadline) ;	
+	\draw[->](Subtract) -> (CurrentTime) ;	
+
+
+	\node[operation] (Subtract) at (9.5,2) {If};
+	\node[logic] (Deadline) at (9.5,0) {Is it snowing?};
+	\node[logic] (CurrentTime) at (9.5,4) {Wear gloves};
+
+	\draw[->](Subtract) -> (Deadline) node[midway,sloped,above] {\tiny condition};	
+	\draw[->](CurrentTime) -> (Subtract) node[midway,sloped,above] {\tiny body} ;	
+
+
+	\node[logic] (Jacket) at (16,6) {Wear a jacket};
+	\node[operation] (TimeLeft) at (16,4) {If};
+	\node[operation] (Subtract) at (16,2) {Operator: $<$};
+	\node[value] (Deadline) at (14,0) {Outside Temperature};
+	\node[value] (CurrentTime) at (18,0) {60$^{\circ}$ Farenheit};
+
+	\draw[->](Jacket) -> (TimeLeft) node[midway,sloped,above] {\tiny body} ;	
+	\draw[->](TimeLeft) -> (Subtract)  node[midway,sloped,above] {\tiny condition} ;	
+	\draw[->](Subtract) -> (Deadline) ;	
+	\draw[->](Subtract) -> (CurrentTime) ;	
+
+\end{tikzpicture}
+
+\caption{Three abstract trees that each represent a simple decision using numerical and/or binary categorical information}
+
+\end{figure}    
+    
+
 	Neural networks have been used for decades to solve a wide variety of machine learning tasks without the need for explicit programming of the solutions to be done by humans. Typically the networks only make use of arithmetic computation, meaning that logical operations are not incorportated into the models. This hasn't been done because there is no clear method by which logical information (TRUE/FALSE) should be converted to numerical information, and vice versa. In Computer Science, True and False are generally represented as 1 and 0, respectively, whereas in Mathematics, they are often represented as -1 and 1 \textcolor{red}{Which specific fields of Math and Compsci?}. Our research aims to construct a neural network which effectively combines logical and arithmetic computation, and apply this network to a problem which demostrates it's ability to perform symbolic reasoning.
+\textcolor{red} {- old background} \\
 	
     \begin{enumerate}
         \item What is symbolic computation?
@@ -175,7 +225,7 @@ While this model is suitable for biological networks of neurons, a neural networ
 
 	\draw [con] (v7) edge (v8);
 
-	\draw [con] (v8) edge (v9);
+	\draw [con] (v8) edge (v9);sudo apt-get install --no-install-recommends texlive-latex-extra
 
     
  \end{tikzpicture}
@@ -375,6 +425,8 @@ An error would be the result if the two expressions were to be evaluated since $
 % https://en.wikipedia.org/wiki/Abstract_syntax_tree#/media/File:Abstract_syntax_tree_for_Euclidean_algorithm.svg
 
 	Conditional statements, such as $if$ and $while$ may be used to combine categorical and numerical computation. Each conditional statement accepts an input expression, and has a body which is defined before runtime. If the input expression evaluates to $True$, then the statement will execute whatever is in the body. The body may contain computations of any kind, including numerical. In the following examples, conditional statements are used to execute some numerical computations depending on the result of some categorical computations.
+
+\newpage	
 	
 \begin{figure}
 
@@ -406,20 +458,21 @@ An error would be the result if the two expressions were to be evaluated since $
 	\node[operation] (incrementCurr) at (6,2.5) {CurrentValue++};
 	\draw[->](while) -> (incrementCurr) ;	
 	
-	\node[operation] (branch) at (10.5,2.5) {branch};
+	\node[operation] (branch) at (10.5,2.5) {if};
 	\node[function] (isPrime) at (9,0) {isPrime(CurrentValue)};
 	\node[operation] (incrementPrime) at (13,0) {NumPrimes++};
 	
 	\draw[->](while) -> (branch) ;
 	\draw[->](branch) -> (isPrime)  node[midway,sloped,above] {condition};		
-	\draw[->](branch) -> (incrementPrime)  node[midway,sloped,above] {if-body};	
+	\draw[->](branch) -> (incrementPrime)  node[midway,sloped,above] {body};	
 	
 \end{tikzpicture}
 
-\caption{A syntax tree that defines a procedure for counting the number of primes up to a certain value. The procedure begins with NumPrimes and CurrentValue set to $0$, and MaxValue set to the highest value to check for prime status. isPrime is a function that returns $True$ if the input value is a prime number, and $False$ if it isn't.}
+\caption{A syntax tree that defines a procedure for counting the number of primes up to a certain value. The procedure begins with NumPrimes and CurrentValue set to $0$, and MaxValue set to the highest value to check for prime status. isPrime is a function that returns $True$ if the input value is a prime number, and $False$ if it isn't. \\} 
 
 \end{figure}
 
+	In the above example, a $while$ conditional statement repeatedly executes it's body as long as $CurrentValue <= MaxValue$ evaluates to $True$ (meaning that CurrentValue is either less than or equal to the MaxValue). In $while$'s body, the $CurrentValue$ is incremented by one then $NumPrimes$ is incremented if the $CurrentValue$ is a prime number.
 
 \section{Results}
 

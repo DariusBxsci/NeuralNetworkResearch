@@ -1,8 +1,8 @@
 \contentsline {section}{\numberline {1}Background}{4}{section.1}
-\contentsline {section}{\numberline {2}Methods}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Network Construction}{4}{subsection.2.1}
+\contentsline {section}{\numberline {2}Methods}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Network Construction}{5}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Using each arithmetic operator with a logical operand}{5}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}An alternative solution}{7}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Combining computation through conditional statements}{8}{subsection.2.4}
-\contentsline {section}{\numberline {3}Results}{9}{section.3}
-\contentsline {section}{\numberline {4}Conclusions}{9}{section.4}
+\contentsline {subsection}{\numberline {2.3}An alternative solution}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Combining computation through conditional statements}{9}{subsection.2.4}
+\contentsline {section}{\numberline {3}Results}{10}{section.3}
+\contentsline {section}{\numberline {4}Conclusions}{10}{section.4}
