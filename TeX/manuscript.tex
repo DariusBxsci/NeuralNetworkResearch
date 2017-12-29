@@ -1,6 +1,28 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{setspace, fancyhdr, hyperref, xcolor, tikz, subcaption, float, marginnote}
+\usepackage{setspace, fancyhdr, hyperref, xcolor, tikz, subcaption, float, marginnote, changebar}
+\usepackage[normalem]{ulem}
+
+\newcommand{\deleted}[1]{%
+  \cbcolor{red}
+  \begin{changebar}
+    #1
+  \end{changebar}%
+  }%
+
+\newcommand{\added}[1]{%
+  \cbcolor{green}
+  \begin{changebar}
+    #1
+  \end{changebar}%
+  }%
+
+\newcommand{\mycomment}[1]{
+    {\color{red}\textsc{#1}}
+}
+
+\setlength{\changebarsep}{2ex}
+
 
 \usetikzlibrary{positioning, intersections, calc, arrows}
 \usepackage[square,numbers]{natbib}
@@ -27,10 +49,46 @@
 \newpage
 
 \begin{abstract}
-    General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation. \\
+    General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. 
     
-    In order for neural networks to solve more complex problems, they must be able to manipulate representations of meaningful information. While current networks have been largely successful in a variety of tasks from image classification to sentiment analysis, the internal computations of the networks have only consisted of many basic arithmetic operations. This model is effective in dealing with and taking advantage of relatively transparent patterns in the training data, but in no way does it attempt to develop meaningful representations of the data. To build a model which generates new text based on some previously written text, modern networks would construct (through training) a framework which determines which word has the highest probability of logically making sense given the previous words in the text. These networks have no consideration for the meaning of the words chosen, only their probability of being correct as meaningless objects. For humans, language is anything but a series of meaningless objects called words, rather each word must be understood in terms of it's meaning, connotation, and acceptibility in the context of what is being said. We learn these aspects of the words we use over the course of our lives, and we constantly refer to these memories when choosing which words to use. In the case of human intelligence, each object of understanding (words, concepts, etc) is directly tied to memories and experiences which give them meaning. For neural networks to solve problems with these highly complex objects, they must represent them in a similar fashion. 
-\textcolor{red} {- old abstract} \\
+    \mycomment{The previous sentence does not make sense. How is \emph{general} AI defined in terms of the performance of \emph{one} task? }
+    
+    A fundamental difference between human neural network and current machine neural networks is that only human networks combine symbolic reasoning with computation. 
+    
+    \mycomment{This sentence needs support from the literature; otherwise, it is an opinion.}
+    \\
+    
+
+    \sout{In order f}For neural networks to solve more complex problems, they must be able to manipulate representations of meaningful information. 
+    
+    \mycomment{The previous sentence is vague, in part because of ``weasel words''.\begin{enumerate}
+        \item What do you mean by \emph{complex} in complex problems?
+        \item What do you mean by \emph{meaningful} in meaningful information?
+    \end{enumerate}
+     Writing \emph{must} signifies that without the ability to represent symbols computers will not be able to solve more complex problems. I think that overstates the case.}\\
+    
+    While current networks have been largely successful in \sout{a variety of tasks from} image classification \sout{to}{\color{red}and} sentiment analysis, the internal computations of the networks have only consisted of many basic arithmetic operations. 
+    
+    \mycomment{\begin{enumerate}
+        \item[] Why do you need the modifier \emph{current}?
+        \item[] Be careful of the phrase from X to Y. It implies that X and Y are in the same metric space. Consider, for example, from NYC to Boston.
+        \item[] I would not call a sigmoidal activation function a basic arithmetic operation. 
+         \end{enumerate}
+         }
+
+    
+    This model is effective in dealing with and taking advantage of relatively transparent patterns in the training data, but in no way does it attempt to develop meaningful representations of the data. 
+    
+    \mycomment{\begin{enumerate}
+        \item[]  To which model does the modified \emph{this} refer? The one in this paper? One of the current neural networks you just mentioned?
+        \item[] What does \emph{relatively transparent} mean?
+        \item[] What, again, does \emph{meaningful} mean?
+        \item[] What does \emph{effective} mean?
+        \item[] The phrase \emph{taking advantage of} is anthropomorphic. You have not demonstrated that the neural networks you mentioned have intention. 
+    \end{enumerate}
+    }
+    To build a model which generates new text based on some previously written text, modern networks would construct (through training) a framework which determines which word has the highest probability of logically making sense given the previous words in the text. These networks have no consideration for the meaning of the words chosen, only their probability of being correct as meaningless objects. For humans, language is anything but a series of meaningless objects called words, rather each word must be understood in terms of it's meaning, connotation, and acceptibility in the context of what is being said. We learn these aspects of the words we use over the course of our lives, and we constantly refer to these memories when choosing which words to use. In the case of human intelligence, each object of understanding (words, concepts, etc) is directly tied to memories and experiences which give them meaning. For neural networks to solve problems with these highly complex objects, they must represent them in a similar fashion. \\
+
     
 \textcolor{red}{- I'm unclear as to whether our focus is to combine Logical symbols and Numerical ones, or to more broadly figure out how to represent complex objects (as stated above)}    
     
