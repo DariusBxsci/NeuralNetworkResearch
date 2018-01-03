@@ -4,6 +4,7 @@
 \contentsline {subsection}{\numberline {2.2}Using each arithmetic operator with a logical operand}{6}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}An alternative solution}{9}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Combining computation through conditional statements}{10}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Routing categorical information through the network}{11}{subsection.2.5}
-\contentsline {section}{\numberline {3}Results}{11}{section.3}
-\contentsline {section}{\numberline {4}Conclusions}{11}{section.4}
+\contentsline {subsection}{\numberline {2.5}The relationship between numerical and categorical information}{11}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Routing categorical information through a neural network}{11}{subsection.2.6}
+\contentsline {section}{\numberline {3}Results}{12}{section.3}
+\contentsline {section}{\numberline {4}Conclusions}{12}{section.4}

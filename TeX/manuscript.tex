@@ -536,7 +536,28 @@ An error would be the result if the two expressions were to be evaluated since $
 
 	In the above example, a $while$ conditional statement repeatedly executes it's body as long as $CurrentValue <= MaxValue$ evaluates to $True$ (meaning that CurrentValue is either less than or equal to the MaxValue). In $while$'s body, the $CurrentValue$ is incremented by one then $NumPrimes$ is incremented if the $CurrentValue$ is a prime number. 
 
-\subsection{Routing categorical information through the network}
+
+
+\subsection{The relationship between numerical and categorical information}
+
+	Numerical information consists of numerical values, such that there exists infinitely many numerical values between two numbers. This property makes numerical information continuous. In contrast, categorical information involves individual values out of a set of either finite or infinite possible values. Categorical information are discrete, however, so there exists a finite number of categories between any two categories. //
+	
+
+\subsection{Routing categorical information through a neural network}
+	
+	Information is represented in one of two ways, numerical or categorical. Numerical values give us the ability to identify the distance between two values, and to have an infinite number of possible values to work with. Categorical values allow us to express information where a specific value to represent the distance between two categories isn't appropriate. We can also express more vague values using categories, without the need for specific numerical values.
+	We can express the speed that an object is moving using either numerical or categorical values. For instance, we may say that an object is moving at exactly 50 miles per hour, or we can simply say that the object is moving 'fast'. In the following figure, we will examine a situation in which both representations are necessary.
+	
+\begin{figure}
+
+\begin{tikzpicture}
+
+	
+\end{tikzpicture}
+
+\caption{A syntax tree that defines a procedure for counting the number of primes up to a certain value. The procedure begins with NumPrimes and CurrentValue set to $0$, and MaxValue set to the highest value to check for prime status. isPrime is a function that returns $True$ if the input value is a prime number, and $False$ if it isn't. \\} 
+
+\end{figure}
 
 \section{Results}
 
