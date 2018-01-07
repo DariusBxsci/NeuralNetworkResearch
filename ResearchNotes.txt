@@ -27,3 +27,21 @@ Abstract Syntax Tree
 
 Combining Logical and Numerical values:
 	-simply turning true to 1 and false to 0 works well with multiplication, but is useless with addition and subtraction, and is unusable with division
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Notes regarding the project as a whole:
+
+    -I found a recent review on Deep Learning which may be useful:
+        http://pages.cs.wisc.edu/~dyer/cs540/handouts/deep-learning-nature2015.pdf
+
+    -Looking at these papers:
+        http://www.ics.uci.edu/~welling/teaching/273ASpring09/lecun-89e.pdf
+        http://papers.nips.cc/paper/293-handwritten-digit-recognition-with-a-back-propagation-network.pdf
+        http://www.dengfanxin.cn/wp-content/uploads/2016/03/1998Lecun.pdf
+        
+        I think that the abstract should be written once the direction of the project has been fully formalized. Each of the above
+        abstracts give brief overview of the project, which I don't think can be done until more work has been done.
+
+        Also, is it a bad idea if the project involves an implementation of something rather than a demonstration? Is an implementation considered Science?
+        Some of the above papers seem to be purely implementations (handwritten digit recognition especially).
