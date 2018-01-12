@@ -595,8 +595,92 @@ An error would be the result if the two expressions were to be evaluated since $
 
 The threshold used in the above procedure is arbitrary, and can be defined differently in different networks. \textcolor{red} {This idea can be used to create a network where this threshold is optimized through gradient descent (similarly to the ReLu activation function with a variable bias)}
 
+\subsection{Using conditional expressions to vary computations of neurons}
 
-\textcolor{red} {Next Step? figure out how to convert from categorical to numerical.}
+Consider a simple network with two input neurons, two corresponding weights, and a single output neuron.
+
+\begin{figure}[!htb]
+
+\centering
+\begin{tikzpicture}
+
+	\tikzstyle{input} = [shape=circle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
+	\tikzstyle{output} = [shape=circle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+	\tikzstyle{weight} = [thick,midway,sloped,above,->]
+
+	\node[input] (i1) at (0,0) {8};
+	\node[input] (i2) at (4,0) {5};
+
+	\node[output] (o1) at (2,2) {14};
+
+	\draw[->](i1) -> (o1) node[weight] {0.5};
+	\draw[->](i2) -> (o1) node[weight] {2};
+
+\end{tikzpicture}
+
+\caption{A simple feed-forward neural network with two inputs and one output.}
+
+\end{figure}
+
+\newpage
+
+In the above network, the output neuron's value is calculated as a weighted sum of the inputs. While this algorithm is widely used in feed-forward neural networks, it assumes that the desired output value's relationship to it's inputs can be modelled by a weighted sum of the inputs.  \\
+
+Suppose we wanted to construct a network that returns the number of times older one person is than another. Given the inputs of 24 and 8, the output would be 3 since a 24-year-old is 3 times older than an 8-year-old. However, this relationship cannot be expressed through a weighted sum, since no weighted sum of two variables will always equal the quotient of the two variables. To deal with this problem, we will introduce a 'router' that will allow for more than just a weighted sum to define the output.
+
+\begin{figure}[!htb]
+
+\centering
+\begin{tikzpicture}
+
+	\tikzstyle{input} = [shape=circle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
+	\tikzstyle{output} = [shape=circle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+	\tikzstyle{router} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = red!32]
+	\tikzstyle{op} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=18]
+	\tikzstyle{weight} = [thick,midway,sloped,above,->]
+
+	\node[input] (i1) at (0,0) {24 Years};
+	\node[input] (i2) at (4,0) {8 Years};
+
+	\node[font=\bf] (dum) at (6,2) {USE DIVISION};
+	\node[router] (r) at (2,2) {Router};
+
+	\node[op] (op1) at (0,4) {$\div$};
+	\node[op] (op2) at (4,4) {$+$};
+
+	\node[output] (o1) at (2,6) {3 Times as old};
+
+	\draw[->](i1) -> (r) node[weight] {};
+	\draw[->](i2) -> (r) node[weight] {};
+
+	\draw[->,line width=0.5mm](dum) -> (r) {};
+
+	\draw[->](r) -> (op1) node[weight] {};
+	\draw[->](r) -> (op2) node[weight] {};
+
+	\draw[->](op1) -> (o1) node[weight] {};
+	\draw[->](op2) -> (o1) node[weight] {};
+
+
+\end{tikzpicture}
+
+\caption{A network which yields the number of times a person is older than another.}
+
+\end{figure}
+
+The 'Router' represents some function which decides which computational class should be used to compute the output. In the above network, we instructed the router to operate on input values using division, since that was how we detirmined that the task could be solved. \\
+
+Of course, instructing the router as to which computation it should use in each input case defeats it's purpose. Instead, we may use conditional statements to determine which computation will be used. This allows us to construct networks which perform different classes of computation depending on the situation. One such network is shown below.
+
+\begin{figure}
+
+\begin{tikzpicture}
+
+\end{tikzpicture}
+
+\caption{}
+
+\end{figure}
 
 \section{Results}
 
