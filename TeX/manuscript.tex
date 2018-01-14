@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
 \usepackage{setspace, fancyhdr, hyperref, xcolor, tikz, subcaption, float, marginnote, changebar}
 \usepackage[normalem]{ulem}
 
@@ -52,7 +53,7 @@
 \begin{abstract}
 
 \textcolor{red}{Rewritten abstract:}
-	Contrary to the way Humans classify information, current neural networks exclusively process numerical (continuous) information. We propose an architecture for Deep Learning models that combine numerical and categorical information... \\
+	In theory, a neural network of sufficient size, where each neuron feeds the weighted sum of it's inputs through a sigmoid activation function, can approximate any function. In practice, these networks will become unnecesarily large to approximate many elementary functions, such as square root, absolute value, and logarithm functions. We propose a technique for introducing a wider range of functional classes in neural networks. \\
 	
     General artificial intelligence refers to machine intelligence than performs a task as successfully as a human does. 
     
@@ -634,7 +635,7 @@ Suppose we wanted to construct a network that returns the number of times older 
 \begin{tikzpicture}
 
 	\tikzstyle{input} = [shape=circle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
-	\tikzstyle{output} = [shape=circle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+	\tikzstyle{output} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
 	\tikzstyle{router} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = red!32]
 	\tikzstyle{op} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=18]
 	\tikzstyle{weight} = [thick,midway,sloped,above,->]
@@ -672,16 +673,55 @@ The 'Router' represents some function which decides which computational class sh
 
 Of course, instructing the router as to which computation it should use in each input case defeats it's purpose. Instead, we may use conditional statements to determine which computation will be used. This allows us to construct networks which perform different classes of computation depending on the situation. One such network is shown below.
 
+\newpage
+
 \begin{figure}
 
-\begin{tikzpicture}
+\centering
+\begin{tikzpicture}[shift={(current page.center)}]
+
+	\tikzstyle{input} = [shape=circle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
+	\tikzstyle{output} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+	\tikzstyle{router} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = red!32]
+	\tikzstyle{op} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=18]
+	\tikzstyle{weight} = [thick,midway,sloped,above,->]
+
+	\node[input] (i1) at (0,0) {x};
+	\node[input] (i2) at (4,0) {y};
+
+	\node[font=\bf] (dum) at (7,2) {
+	\begin{tabular}{cc}
+	ADDITION if $x <= y$ \\
+	MULTIPLICATION if $x > y$
+	\end{tabular}
+	};
+	
+	\node[router] (r) at (2,2) {Router};
+
+	\node[op] (op1) at (0,4) {$+$};
+	\node[op] (op2) at (4,4) {$\times$};
+
+	\node[output] (o1) at (2,6) {Piecewise function of $x + y$ and $x * y$};
+
+	\draw[->](i1) -> (r) node[weight] {};
+	\draw[->](i2) -> (r) node[weight] {};
+
+	\draw[->,line width=0.5mm, loop above](dum) -> (r) {};
+
+	\draw[->](r) -> (op1) node[weight] {};
+	\draw[->](r) -> (op2) node[weight] {};
+
+	\draw[->](op1) -> (o1) node[weight] {};
+	\draw[->](op2) -> (o1) node[weight] {};
+
 
 \end{tikzpicture}
 
-\caption{}
+\caption{A simple piecewise function modelled by a router network}
 
 \end{figure}
 
+The above network models a piecewise function of the expressions $x + y$ and $x *y$, where $x$ and $y$ are inputs. A typical neural network which uses weighted sums and sigmoid activation functions would require many neurons and considerable training to model this function.
 
 \section{Results}
 
