@@ -1,11 +1,14 @@
 \contentsline {section}{\numberline {1}Background}{5}{section.1}
+\contentsline {subsection}{\numberline {1.1}What is an Artificial Neural Network?}{6}{subsection.1.1}
 \contentsline {section}{\numberline {2}Methods}{6}{section.2}
 \contentsline {subsection}{\numberline {2.1}Network Construction}{6}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Using each arithmetic operator with a logical operand}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Using each arithmetic operator with a logical operand}{7}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}An alternative solution}{9}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Combining computation through conditional statements}{10}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}The relationship between numerical and categorical information}{11}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}Routing categorical information through a neural network}{11}{subsection.2.6}
 \contentsline {subsection}{\numberline {2.7}Using conditional expressions to vary computations of neurons}{12}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Networks that are aware of the functions they compute}{14}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Manipulating symbols}{14}{subsection.2.9}
 \contentsline {section}{\numberline {3}Results}{14}{section.3}
 \contentsline {section}{\numberline {4}Conclusions}{14}{section.4}

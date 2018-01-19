@@ -1,11 +1,14 @@
 \BOOKMARK [1][-]{section.1}{Background}{}% 1
-\BOOKMARK [1][-]{section.2}{Methods}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Network Construction}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Using each arithmetic operator with a logical operand}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{An alternative solution}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Combining computation through conditional statements}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{The relationship between numerical and categorical information}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.6}{Routing categorical information through a neural network}{section.2}% 8
-\BOOKMARK [2][-]{subsection.2.7}{Using conditional expressions to vary computations of neurons}{section.2}% 9
-\BOOKMARK [1][-]{section.3}{Results}{}% 10
-\BOOKMARK [1][-]{section.4}{Conclusions}{}% 11
+\BOOKMARK [2][-]{subsection.1.1}{What is an Artificial Neural Network?}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{Methods}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Network Construction}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Using each arithmetic operator with a logical operand}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{An alternative solution}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{Combining computation through conditional statements}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{The relationship between numerical and categorical information}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.6}{Routing categorical information through a neural network}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.7}{Using conditional expressions to vary computations of neurons}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.8}{Networks that are aware of the functions they compute}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.9}{Manipulating symbols}{section.2}% 12
+\BOOKMARK [1][-]{section.3}{Results}{}% 13
+\BOOKMARK [1][-]{section.4}{Conclusions}{}% 14
