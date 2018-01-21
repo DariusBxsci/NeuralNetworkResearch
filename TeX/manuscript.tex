@@ -726,19 +726,88 @@
 	
 	The above network models a piecewise function of the expressions $x + y$ and $x * y$, where $x$ and $y$ are inputs. A typical neural network which uses weighted sums and sigmoid activation functions would require many neurons and considerable training to model this function.
 	
+	\subsection{Are Neural Networks Turing Complete?}
+
+		For something to be Turing complete, it must be able to do anything that a Turing Machine can do. All that a Turing Machine can do is read each cell in a tape of 1's and 0's, write to each cell, and go to each cell. For a Turing Machine to be able to compute anything (given an infinite amount of time), it must use a tape that may have infinite length. 
+		
+		To decide whether or not a Neural Network is Turing complete, we need to imagine a simple Turing Machine. Suppose we have a turing machine which switches two numbers, such that the output is the reverse of the input. To do this, the first number must be stored in a buffer cell, the first cell should be set to the value of the second cell, and the second cell should be set to the value of the buffer. Notice that the contents of the tape in this machine may be any integer value, rather than just 1 or 0. 
+		
+		\newpage
+		\begin{figure}
+			
+			\centering
+			\begin{tikzpicture}
+			
+			
+			\tikzstyle{input} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
+			\tikzstyle{output} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+			\tikzstyle{weight} = [thick,midway,sloped,above,->]
+			
+			\node[input] (i1) at (0,0) {Value 1};
+			\node[input] (i2) at (3,0) {Value 2};
+			
+			\node[output] (o1) at (0,4) {Value 2};
+			\node[output] (o2) at (3,4) {Value 1};			
+			
+			\draw[->](i1) -> (o1) node[weight] {\large 0};
+			\draw[->,color=red](i1) -> (o2) node[weight,color=red] {\large 1};
+			\draw[->,color=red](i2) -> (o1) node[weight,color=red] {\large 1};
+			\draw[->](i2) -> (o2) node[weight] {\large 0};
+			
+			\end{tikzpicture}
+			
+			\caption{A simple Neural Network that swaps two input values}
+			
+		\end{figure}
+		
 	
 	\subsection{Networks that are aware of the functions they compute}
 	
 		Neural Networks are typically tasked with modeling some relationship between input values and output values. For instance, a Network may be trained to return an output which classifies an input image. However, the extent to which Neural Networks can manipulate their own internal state has not been considered. In this subsection we will attempt to construct a network which can activate some identifiable signal depending on whether or not a function was applied to an input signal or not. 
 		
-		In the previous subsection, a 'router' was used to decide which function should be used to combine two input values. We will construct a network which imitates the role of the router, using a standard combination of weights and activation functions.
+		In subsection 2.7, a 'router' was used to decide which function should be used to combine two input values. We will construct a network which imitates the role of the router, using a standard combination of weights and activation functions. To do this, we will need to incorporate the ReLu activation funciton (which sets a value to zero if it's less than or equal to zero and leaves the value unchanged other wise) and a bias unit (which adds a constant value to a neuron). 
+		
+		\newpage
+		\begin{figure}
+			
+			\centering
+			\begin{tikzpicture}
+			
+			
+			\tikzstyle{input} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
+			\tikzstyle{hidden} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = red!32]
+			\tikzstyle{bias} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = purple!32]
+			\tikzstyle{output} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+			\tikzstyle{weight} = [thick,midway,sloped,above,->]
+			
+			\node[input] (i1) at (0,0) {x};
+			\node[input] (i2) at (4,0) {y};
+			
+			\node[hidden] (h1) at (0,2) {ReLu};
+			
+			\node[bias] (b1) at (4,4) {1};
+			
+			\node[output] (o1) at (0,6) {+};
+			\node[output] (o2) at (4,6) {*};			
+			
+			\draw[->](i1) -> (h1) node[weight] {\large 1};
+			\draw[->](i2) -> (h1) node[weight] {\large 1};
+			
+			\draw[->](h1) -> (o1) node[weight] {\large 1};
+			\draw[->](h1) -> (o2) node[weight] {\large -1};
+			
+			\draw[->](b1) -> (o2) node[weight] {};
+			
+			\end{tikzpicture}
+			
+			\caption{A 'router' network that abides by the standard structure of a feed-forward Neural Network}
+			
+		\end{figure}
+		
 	
 	\subsection{Manipulating symbols}
 	
 		Within the standard model of Neural Networks (neurons with activation functions that are interconnected by weights), manipulation of numerical values is commonplace. Manipulation of symbols, on the other hand. In the context of ANN's, a symbol is an internal state of some group of neurons. For example, when processing an input of an image, some neurons may compute a larger activation value if some feature exists in the input, so the region of inputs that corresponds to the existence of the feature 'symbolizes' that feature. Symbols are a useful construct for identifying the underlying meaning behind each computation in a Neural Network.
-		
-	\subsection{Can a Neural Network function as Universal Turing Machine?}
-	
 		
 	
 	\section{Results}
