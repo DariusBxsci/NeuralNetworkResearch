@@ -738,21 +738,20 @@
 			\centering
 			\begin{tikzpicture}
 			
-			
-			\tikzstyle{input} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
-			\tikzstyle{output} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
-			\tikzstyle{weight} = [thick,midway,sloped,above,->]
-			
-			\node[input] (i1) at (0,0) {Value 1};
-			\node[input] (i2) at (3,0) {Value 2};
-			
-			\node[output] (o1) at (0,4) {Value 2};
-			\node[output] (o2) at (3,4) {Value 1};			
-			
-			\draw[->](i1) -> (o1) node[weight] {\large 0};
-			\draw[->,color=red](i1) -> (o2) node[weight,color=red] {\large 1};
-			\draw[->,color=red](i2) -> (o1) node[weight,color=red] {\large 1};
-			\draw[->](i2) -> (o2) node[weight] {\large 0};
+				\tikzstyle{input} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
+				\tikzstyle{output} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+				\tikzstyle{weight} = [thick,midway,sloped,above,->]
+				
+				\node[input] (i1) at (0,0) {Value 1};
+				\node[input] (i2) at (3,0) {Value 2};
+				
+				\node[output] (o1) at (0,4) {Value 2};
+				\node[output] (o2) at (3,4) {Value 1};			
+				
+				\draw[->](i1) -> (o1) node[weight] {\large 0};
+				\draw[->,color=red](i1) -> (o2) node[weight,color=red] {\large 1};
+				\draw[->,color=red](i2) -> (o1) node[weight,color=red] {\large 1};
+				\draw[->](i2) -> (o2) node[weight] {\large 0};
 			
 			\end{tikzpicture}
 			
@@ -765,7 +764,7 @@
 	
 		Neural Networks are typically tasked with modeling some relationship between input values and output values. For instance, a Network may be trained to return an output which classifies an input image. However, the extent to which Neural Networks can manipulate their own internal state has not been considered. In this subsection we will attempt to construct a network which can activate some identifiable signal depending on whether or not a function was applied to an input signal or not. 
 		
-		In subsection 2.7, a 'router' was used to decide which function should be used to combine two input values. We will construct a network which imitates the role of the router, using a standard combination of weights and activation functions. To do this, we will need to incorporate the ReLu activation funciton (which sets a value to zero if it's less than or equal to zero and leaves the value unchanged other wise) and a bias unit (which adds a constant value to a neuron). 
+		In subsection 2.7, a 'router' was used to decide which function should be used to combine two input values. We will construct a network which imitates the role of the router, using a standard combination of weights and activation functions. To do this, we will need to incorporate the ReLu activation funciton (which sets a value to zero if it's less than or equal to zero and leaves the value unchanged otherwise) and a bias unit (which adds a constant value to a neuron). 
 		
 		\newpage
 		\begin{figure}
@@ -791,7 +790,7 @@
 			\node[output] (o2) at (4,6) {*};			
 			
 			\draw[->](i1) -> (h1) node[weight] {\large 1};
-			\draw[->](i2) -> (h1) node[weight] {\large 1};
+			\draw[->](i2) -> (h1) node[weight] {\large -1};
 			
 			\draw[->](h1) -> (o1) node[weight] {\large 1};
 			\draw[->](h1) -> (o2) node[weight] {\large -1};
@@ -804,17 +803,22 @@
 			
 		\end{figure}
 		
+		The above network demonstrates awareness of the function it computes because the neurons that correspond to either addition or multiplication will receive a zero or non-zero input depending on whether or not its function is to be used. Going forward, we will say that a neuron which receives an input of zero is 'inactive' and one which receives a non-zero input is 'active'. Of course, given different input values to the network, different neurons may become active or inactive. 
 	
 	\subsection{Manipulating symbols}
 	
-		Within the standard model of Neural Networks (neurons with activation functions that are interconnected by weights), manipulation of numerical values is commonplace. Manipulation of symbols, on the other hand. In the context of ANN's, a symbol is an internal state of some group of neurons. For example, when processing an input of an image, some neurons may compute a larger activation value if some feature exists in the input, so the region of inputs that corresponds to the existence of the feature 'symbolizes' that feature. Symbols are a useful construct for identifying the underlying meaning behind each computation in a Neural Network.
+		Within the standard model of Neural Networks (neurons with activation functions that are interconnected by weights), manipulation of numerical values is commonplace. Manipulation of symbols, on the other hand. In the context of ANN's, a symbol is an internal state of some group of neurons. For example, when processing an input of an image, some neurons may compute a larger activation value if some feature exists in the input, so the region of inputs that corresponds to the existence of the feature 'symbolizes' that feature. The representations expressed by Symbols are categorical, such that some function (which will differ in different symbols) exists that maps the set of activities of the neurons in the group to a category. Symbols are a useful construct for identifying the underlying meaning behind each computation in a Neural Network.
 		
+		In figure 13 (section 2.9), a simple network either adds or multiplies two input values depending on which is greater. We can say that the group of the two output neurons (one being an adder and one a multiplier) is a symbol, which represents the function that was performed.
 	
 	\section{Results}
 	
 	\section{Conclusions}
 	
-	\bibliography{references}
-	
+	\begin{thebibliography}{9}
+		\bibitem{latexcompanion} 
+		Sample reference 
+	\end{thebibliography}
+
 \end{document}
 

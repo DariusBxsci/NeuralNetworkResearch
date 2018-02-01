@@ -11,5 +11,5 @@
 \contentsline {subsection}{\numberline {2.8}Are Neural Networks Turing Complete?}{14}{subsection.2.8}
 \contentsline {subsection}{\numberline {2.9}Networks that are aware of the functions they compute}{15}{subsection.2.9}
 \contentsline {subsection}{\numberline {2.10}Manipulating symbols}{16}{subsection.2.10}
-\contentsline {section}{\numberline {3}Results}{16}{section.3}
-\contentsline {section}{\numberline {4}Conclusions}{16}{section.4}
+\contentsline {section}{\numberline {3}Results}{17}{section.3}
+\contentsline {section}{\numberline {4}Conclusions}{17}{section.4}
