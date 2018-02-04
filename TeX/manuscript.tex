@@ -3,6 +3,8 @@
 \usepackage{amsmath}
 \usepackage{setspace, fancyhdr, hyperref, xcolor, tikz, subcaption, float, marginnote, changebar}
 \usepackage[normalem]{ulem}
+\usetikzlibrary{fit}
+
 
 \newcommand{\deleted}[1]{%
 	\cbcolor{red}
@@ -666,6 +668,7 @@
 		\draw[->](op2) -> (o1) node[weight] {};
 		
 		
+		
 		\end{tikzpicture}
 		
 		\caption{A network which yields the number of times a person is older than another.}
@@ -809,7 +812,54 @@
 	
 		Within the standard model of Neural Networks (neurons with activation functions that are interconnected by weights), manipulation of numerical values is commonplace. Manipulation of symbols, on the other hand. In the context of ANN's, a symbol is an internal state of some group of neurons. For example, when processing an input of an image, some neurons may compute a larger activation value if some feature exists in the input, so the region of inputs that corresponds to the existence of the feature 'symbolizes' that feature. The representations expressed by Symbols are categorical, such that some function (which will differ in different symbols) exists that maps the set of activities of the neurons in the group to a category. Symbols are a useful construct for identifying the underlying meaning behind each computation in a Neural Network.
 		
-		In figure 13 (section 2.9), a simple network either adds or multiplies two input values depending on which is greater. We can say that the group of the two output neurons (one being an adder and one a multiplier) is a symbol, which represents the function that was performed.
+		In figure 13 (section 2.9), a simple network either adds or multiplies two input values depending on which is greater. We can say that the group of the two output neurons (one being an adder and one a multiplier) is a symbol, which represents the function that was performed. The categorization function would simply check which activity is higher in each of the two neurons and will say that the symbol represents the function of whichever has the higher activity.
+		
+		\begin{figure}
+	
+	\centering
+		\begin{tikzpicture}
+		
+			
+			\tikzstyle{input} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = green!32]
+			\tikzstyle{hidden} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = red!32]
+			\tikzstyle{bias} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = purple!32]
+			\tikzstyle{output} = [shape=rectangle, draw, outer sep=0,inner  sep=6,minimum size=15, fill = blue!32]
+			\tikzstyle{weight} = [thick,midway,sloped,above,->]
+			
+			\node[input] (i1) at (0,0) {x};
+			\node[input] (i2) at (4,0) {y};
+			
+			\node[hidden] (h1) at (0,2) {ReLu};
+			
+			\node[bias] (b1) at (4,4) {1};
+			
+			\node[output] (o1) at (0,6) {0 or 1};
+			\node[output] (o2) at (4,6) {0 or 1};			
+			
+			\draw[->](i1) -> (h1) node[weight] {\large 1};
+			\draw[->](i2) -> (h1) node[weight] {\large -1};
+			
+			\draw[->](h1) -> (o1) node[weight] {\large 1};
+			\draw[->](h1) -> (o2) node[weight] {\large -1};
+			
+			\draw[->](b1) -> (o2) node[weight] {};
+			
+			\node[draw,rounded corners,color=red,line width=0.5mm,inner sep=2mm,label=above:Symbol S,fit=(o1) (o2) (o1) (o2)] {};
+		
+		\end{tikzpicture}
+		
+		The corresponding definition of Symbol S is the following:
+		
+		\[ S =
+		\begin{cases} 
+			'Addition' & [1,0] \\
+			'Multiplication' & [0,1]
+		\end{cases}
+		\]
+		
+		\caption{A 'router' network expressed using a Symbol}
+		
+	\end{figure}
 	
 	\section{Results}
 	
