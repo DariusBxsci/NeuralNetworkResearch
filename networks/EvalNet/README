@@ -1,0 +1,4 @@
+This folder contains headers and source files (written in C++) for our implementation of Artificial Neural Networks, for use in the analysis of the hidden layers of trained Neural Networks.
+
+In this file's parent directory can be found numerous networks that have been built using the classes defined here.
+

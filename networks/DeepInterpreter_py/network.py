@@ -12,12 +12,12 @@ model.add(Dense(units=7, activation='relu', input_dim=7))
 model.add(Dense(units=7, activation='relu'))
 model.add(Dense(units=7, activation='sigmoid'))
 model.add(Dense(units=7, activation='relu'))
-model.add(Dense(units=1, activation='relu'))
+model.add(Dense(units=1, activation='sigmoid'))
 
 x_train, y_train = generate_training_data()
 
 model.compile(loss='mean_squared_error', optimizer='rmsprop', metrics=['accuracy'])
 
-model.fit(x_train, y_train, epochs=50, batch_size=10)
+model.fit(x_train, y_train, epochs=5, batch_size=10)
 
 print model.predict_classes(numpy.array([[0.0,0.0,1.0,1.0,1.0,0.0,0.0]]))

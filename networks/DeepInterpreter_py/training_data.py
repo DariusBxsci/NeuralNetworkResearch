@@ -59,8 +59,8 @@ def generate_training_data():
   
     #print input_examples
 
-    input_examples = np.array(input_examples)
-    output_examples = np.array(output_examples)
+    input_examples = np.array(input_examples,dtype=float)
+    output_examples = np.array(output_examples,dtype=float)
 
     #print input_examples.shape
 
